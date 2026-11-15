@@ -1,0 +1,2641 @@
+{
+ "summary": {
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "adapter": "adapters",
+  "examples": 292,
+  "exact_match": 80.1,
+  "execution_accuracy": 83.9,
+  "valid_sql": 97.6,
+  "seconds_per_query": 0.17
+ },
+ "rows": [
+  {
+   "question": "What type is the school located in Macon, Georgia?",
+   "context": "CREATE TABLE table_1973842_1 (type VARCHAR, location VARCHAR)",
+   "answer": "SELECT type FROM table_1973842_1 WHERE location = \"Macon, Georgia\"",
+   "pred": "SELECT type FROM table_1973842_1 WHERE location = \"Macon, Georgia\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "what is the lowest rank when the constituency is edinburgh northern and leith and the swing to gain is less than 4.16?",
+   "context": "CREATE TABLE table_name_61 (rank INTEGER, constituency VARCHAR, swing_to_gain VARCHAR)",
+   "answer": "SELECT MIN(rank) FROM table_name_61 WHERE constituency = \"edinburgh northern and leith\" AND swing_to_gain < 4.16",
+   "pred": "SELECT MIN(rank) FROM table_name_61 WHERE constituency = \"edinburgh northern and leith\" AND swing_to_gain < 4.16",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Tell me the constructor for david coulthard",
+   "context": "CREATE TABLE table_name_10 (constructor VARCHAR, driver VARCHAR)",
+   "answer": "SELECT constructor FROM table_name_10 WHERE driver = \"david coulthard\"",
+   "pred": "SELECT constructor FROM table_name_10 WHERE driver = \"david coulthard\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many kinds of roles are there for the staff?",
+   "context": "CREATE TABLE Project_Staff (role_code VARCHAR)",
+   "answer": "SELECT COUNT(DISTINCT role_code) FROM Project_Staff",
+   "pred": "SELECT COUNT(*) FROM Project_Staff",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Who won the Mixed Doubles in 2007?",
+   "context": "CREATE TABLE table_name_49 (mixed_doubles VARCHAR, year VARCHAR)",
+   "answer": "SELECT mixed_doubles FROM table_name_49 WHERE year = \"2007\"",
+   "pred": "SELECT mixed_doubles FROM table_name_49 WHERE year = 2007",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the TV Channel of TV series with Episode \"A Love of a Lifetime\"? List the TV Channel's series name.",
+   "context": "CREATE TABLE TV_series (Channel VARCHAR, Episode VARCHAR); CREATE TABLE TV_Channel (series_name VARCHAR, id VARCHAR)",
+   "answer": "SELECT T1.series_name FROM TV_Channel AS T1 JOIN TV_series AS T2 ON T1.id = T2.Channel WHERE T2.Episode = \"A Love of a Lifetime\"",
+   "pred": "SELECT T1.Channel FROM TV_Channel AS T1 JOIN TV_series AS T2 ON T1.id = T2.series_name WHERE T2.episode = \"A Love of a Lifetime\"",
+   "exact": false,
+   "exec": false,
+   "valid": false
+  },
+  {
+   "question": "Who is the owner of the radio frequency of 0 101.5 fm?",
+   "context": "CREATE TABLE table_name_90 (owner VARCHAR, frequency VARCHAR)",
+   "answer": "SELECT owner FROM table_name_90 WHERE frequency = \"0 101.5 fm\"",
+   "pred": "SELECT owner FROM table_name_90 WHERE frequency = \"0 101.5 fm\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the syrian christians for  thiruvananthapuram",
+   "context": "CREATE TABLE table_23214055_2 (syrian_christians VARCHAR, district VARCHAR)",
+   "answer": "SELECT syrian_christians FROM table_23214055_2 WHERE district = \"Thiruvananthapuram\"",
+   "pred": "SELECT Syrian Christians FROM table_23214055_2 WHERE district = \"Thiruvananthapuram\"",
+   "exact": false,
+   "exec": false,
+   "valid": false
+  },
+  {
+   "question": "Which Format has a Catalog of 561 445-1?",
+   "context": "CREATE TABLE table_name_81 (format VARCHAR, catalog VARCHAR)",
+   "answer": "SELECT format FROM table_name_81 WHERE catalog = \"561 445-1\"",
+   "pred": "SELECT format FROM table_name_81 WHERE catalog = \"561 445-1\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who won Silverstone in a round after 10?",
+   "context": "CREATE TABLE table_name_90 (name VARCHAR, round VARCHAR, circuit VARCHAR)",
+   "answer": "SELECT name FROM table_name_90 WHERE round > 10 AND circuit = \"silverstone\"",
+   "pred": "SELECT name FROM table_name_90 WHERE round > 10 AND circuit = \"silverstone\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What season was Freiburger FC the RL S\u00fcd (2nd) team?",
+   "context": "CREATE TABLE table_20217456_7 (season VARCHAR, rl_s\u00fcd__2nd_ VARCHAR)",
+   "answer": "SELECT season FROM table_20217456_7 WHERE rl_s\u00fcd__2nd_ = \"Freiburger FC\"",
+   "pred": "SELECT season FROM table_20217456_7 WHERE rl_s\u00fcd__2nd_ = \"Freiburger FC\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "I want to know the date with attendance of 35,763",
+   "context": "CREATE TABLE table_name_88 (date VARCHAR, attendance VARCHAR)",
+   "answer": "SELECT date FROM table_name_88 WHERE attendance = \"35,763\"",
+   "pred": "SELECT date FROM table_name_88 WHERE attendance = \"35,763\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What residence hall has the vermin mascot?",
+   "context": "CREATE TABLE table_15873547_1 (residence_hall VARCHAR, mascot VARCHAR)",
+   "answer": "SELECT residence_hall FROM table_15873547_1 WHERE mascot = \"Vermin\"",
+   "pred": "SELECT residence_hall FROM table_15873547_1 WHERE mascot = \"Vermin\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the highest round where a back named Ed Cody can be found?",
+   "context": "CREATE TABLE table_name_53 (round INTEGER, position VARCHAR, player VARCHAR)",
+   "answer": "SELECT MAX(round) FROM table_name_53 WHERE position = \"back\" AND player = \"ed cody\"",
+   "pred": "SELECT MAX(round) FROM table_name_53 WHERE position = \"back\" AND player = \"ed cody\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Score has Opponents of valencia, and a Year of 2011\u201312?",
+   "context": "CREATE TABLE table_name_21 (score VARCHAR, opponents VARCHAR, year VARCHAR)",
+   "answer": "SELECT score FROM table_name_21 WHERE opponents = \"valencia\" AND year = \"2011\u201312\"",
+   "pred": "SELECT score FROM table_name_21 WHERE opponents = \"valencia\" AND year = \"2011\u201312\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the result of the game on week 4?",
+   "context": "CREATE TABLE table_name_37 (result VARCHAR, week VARCHAR)",
+   "answer": "SELECT result FROM table_name_37 WHERE week = 4",
+   "pred": "SELECT result FROM table_name_37 WHERE week = 4",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the party for new york 4",
+   "context": "CREATE TABLE table_19753079_35 (party VARCHAR, district VARCHAR)",
+   "answer": "SELECT party FROM table_19753079_35 WHERE district = \"New York 4\"",
+   "pred": "SELECT party FROM table_19753079_35 WHERE district = \"New York 4\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many goals when the score is 3-0 in the euro 2012 q?",
+   "context": "CREATE TABLE table_name_61 (goal VARCHAR, competition VARCHAR, score VARCHAR)",
+   "answer": "SELECT COUNT(goal) FROM table_name_61 WHERE competition = \"euro 2012 q\" AND score = \"3-0\"",
+   "pred": "SELECT COUNT(goal) FROM table_name_61 WHERE competition = \"euro 2012 q\" AND score = \"3-0\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "what is the status in vestal",
+   "context": "CREATE TABLE table_18159601_1 (status VARCHAR, city VARCHAR)",
+   "answer": "SELECT status FROM table_18159601_1 WHERE city = \"Vestal\"",
+   "pred": "SELECT status FROM table_18159601_1 WHERE city = \"Vestal\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What average week number had the Chicago bears as the opponent?",
+   "context": "CREATE TABLE table_name_58 (week INTEGER, opponent VARCHAR)",
+   "answer": "SELECT AVG(week) FROM table_name_58 WHERE opponent = \"chicago bears\"",
+   "pred": "SELECT AVG(week) FROM table_name_58 WHERE opponent = \"chicago bears\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which NHL team has a Player of steve durbano?",
+   "context": "CREATE TABLE table_name_97 (nhl_team VARCHAR, player VARCHAR)",
+   "answer": "SELECT nhl_team FROM table_name_97 WHERE player = \"steve durbano\"",
+   "pred": "SELECT nhl_team FROM table_name_97 WHERE player = \"steve durbano\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the Gecko value for the item that has a Trident value of 'font'?",
+   "context": "CREATE TABLE table_name_34 (gecko VARCHAR, trident VARCHAR)",
+   "answer": "SELECT gecko FROM table_name_34 WHERE trident = \"font\"",
+   "pred": "SELECT gecko FROM table_name_34 WHERE trident = \"font\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the result of the election of the incumbent clyde doyle?",
+   "context": "CREATE TABLE table_1341973_6 (result VARCHAR, incumbent VARCHAR)",
+   "answer": "SELECT result FROM table_1341973_6 WHERE incumbent = \"Clyde Doyle\"",
+   "pred": "SELECT result FROM table_1341973_6 WHERE incumbent = \"Clyde Doyle\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many positions drafted for the Minnesota North Stars?",
+   "context": "CREATE TABLE table_2897457_4 (position VARCHAR, nhl_team VARCHAR)",
+   "answer": "SELECT COUNT(position) FROM table_2897457_4 WHERE nhl_team = \"Minnesota North Stars\"",
+   "pred": "SELECT COUNT(position) FROM table_2897457_4 WHERE nhl_team = \"Minnesota North Stars\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "On which date was the record of 27-28-11 set?",
+   "context": "CREATE TABLE table_27537518_9 (date VARCHAR, record VARCHAR)",
+   "answer": "SELECT date FROM table_27537518_9 WHERE record = \"27-28-11\"",
+   "pred": "SELECT date FROM table_27537518_9 WHERE record = \"27-28-11\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is Tim Andree's greatest number?",
+   "context": "CREATE TABLE table_name_50 (number INTEGER, name VARCHAR)",
+   "answer": "SELECT MAX(number) FROM table_name_50 WHERE name = \"tim andree\"",
+   "pred": "SELECT MAX(number) FROM table_name_50 WHERE name = \"tim andree\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the most wins for sport colombia",
+   "context": "CREATE TABLE table_18703133_1 (wins INTEGER, team VARCHAR)",
+   "answer": "SELECT MAX(wins) FROM table_18703133_1 WHERE team = \"Sport Colombia\"",
+   "pred": "SELECT MAX(wins) FROM table_18703133_1 WHERE team = \"Sport Colombia\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What location is listed from 2005-2010?",
+   "context": "CREATE TABLE table_26476336_2 (location VARCHAR, years VARCHAR)",
+   "answer": "SELECT location FROM table_26476336_2 WHERE years = \"2005-2010\"",
+   "pred": "SELECT location FROM table_26476336_2 WHERE years = \"2005-2010\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the result on November 20, 1988?",
+   "context": "CREATE TABLE table_name_49 (result VARCHAR, date VARCHAR)",
+   "answer": "SELECT result FROM table_name_49 WHERE date = \"november 20, 1988\"",
+   "pred": "SELECT result FROM table_name_49 WHERE date = \"november 20, 1988\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "what is the crashandride cymbalpads for the drumset name td-9k2",
+   "context": "CREATE TABLE table_2889300_6 (crashandride_cymbalpads VARCHAR, drumset_name VARCHAR)",
+   "answer": "SELECT crashandride_cymbalpads FROM table_2889300_6 WHERE drumset_name = \"TD-9K2\"",
+   "pred": "SELECT crashandride_cymbalpads FROM table_2889300_6 WHERE drumset_name = \"TD-9K2\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "When Bob Dole had 26%, and George H.W. Bush had 47%, what did Pat Robertson have?",
+   "context": "CREATE TABLE table_name_12 (pat_robertson VARCHAR, bob_dole VARCHAR, george_hw_bush VARCHAR)",
+   "answer": "SELECT pat_robertson FROM table_name_12 WHERE bob_dole = \"26%\" AND george_hw_bush = \"47%\"",
+   "pred": "SELECT pat_robertson FROM table_name_12 WHERE bob_dole = \"26%\" AND george_hw_bush = \"47%\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the first date of election for the incumbent that was re-elected in the South Carolina 1 district?",
+   "context": "CREATE TABLE table_name_45 (first_elected VARCHAR, result VARCHAR, district VARCHAR)",
+   "answer": "SELECT first_elected FROM table_name_45 WHERE result = \"re-elected\" AND district = \"south carolina 1\"",
+   "pred": "SELECT first_elected FROM table_name_45 WHERE result = \"re-elected\" AND district = \"south carolina 1\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What's the latitude when the longitude is 152.0e later than 1997?",
+   "context": "CREATE TABLE table_name_66 (latitude VARCHAR, year_named VARCHAR, longitude VARCHAR)",
+   "answer": "SELECT latitude FROM table_name_66 WHERE year_named > 1997 AND longitude = \"152.0e\"",
+   "pred": "SELECT latitude FROM table_name_66 WHERE year_named = \"1997\" AND longitude = \"152.0e\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Name the average Top 5 which has a Position of 52nd with a Year smaller than 2000?",
+   "context": "CREATE TABLE table_name_29 (top_5 INTEGER, position VARCHAR, year VARCHAR)",
+   "answer": "SELECT AVG(top_5) FROM table_name_29 WHERE position = \"52nd\" AND year < 2000",
+   "pred": "SELECT AVG(top_5) FROM table_name_29 WHERE position = \"52nd\" AND year < 2000",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the maximum number of 2006 subscribers for Glo Mobile?",
+   "context": "CREATE TABLE table_29395291_2 (subscribers__2006___thousands_ INTEGER, provider VARCHAR)",
+   "answer": "SELECT MAX(subscribers__2006___thousands_) FROM table_29395291_2 WHERE provider = \"Glo Mobile\"",
+   "pred": "SELECT MAX(subscribers__2006___thousands_) FROM table_29395291_2 WHERE provider = \"Glo Mobile\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who were the candidates when Shirley Chisholm was the incumbent?",
+   "context": "CREATE TABLE table_1341663_33 (candidates VARCHAR, incumbent VARCHAR)",
+   "answer": "SELECT candidates FROM table_1341663_33 WHERE incumbent = \"Shirley Chisholm\"",
+   "pred": "SELECT candidates FROM table_1341663_33 WHERE incumbent = \"Shirley Chisholm\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Where did they play in week 14?",
+   "context": "CREATE TABLE table_name_57 (game_site VARCHAR, week VARCHAR)",
+   "answer": "SELECT game_site FROM table_name_57 WHERE week = \"14\"",
+   "pred": "SELECT game_site FROM table_name_57 WHERE week = 14",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many different Leagues are associated with Billy Meredith Category:Articles with hCards?",
+   "context": "CREATE TABLE table_14962287_2 (league VARCHAR, name VARCHAR)",
+   "answer": "SELECT COUNT(league) FROM table_14962287_2 WHERE name = \"Billy Meredith Category:Articles with hCards\"",
+   "pred": "SELECT COUNT(league) FROM table_14962287_2 WHERE name = \"Billy Meredith Category:Articles with hCards\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Tell me the wkts for econ of 4.23",
+   "context": "CREATE TABLE table_name_13 (wkts VARCHAR, econ VARCHAR)",
+   "answer": "SELECT wkts FROM table_name_13 WHERE econ = \"4.23\"",
+   "pred": "SELECT wkts FROM table_name_13 WHERE econ = \"4.23\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the D 41 \u221a for having D 43 of r 13",
+   "context": "CREATE TABLE table_name_20 (d_41_\u221a VARCHAR, d_43_o VARCHAR)",
+   "answer": "SELECT d_41_\u221a FROM table_name_20 WHERE d_43_o = \"r 13\"",
+   "pred": "SELECT d_41_\u221a FROM table_name_20 WHERE d_43_o = \"r 13\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who is the visitor with a record of 14\u201317\u20135?",
+   "context": "CREATE TABLE table_name_54 (visitor VARCHAR, record VARCHAR)",
+   "answer": "SELECT visitor FROM table_name_54 WHERE record = \"14\u201317\u20135\"",
+   "pred": "SELECT visitor FROM table_name_54 WHERE record = \"14\u201317\u20135\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What position has less than 6 Points?",
+   "context": "CREATE TABLE table_name_63 (position VARCHAR, points INTEGER)",
+   "answer": "SELECT COUNT(position) FROM table_name_63 WHERE points < 6",
+   "pred": "SELECT position FROM table_name_63 WHERE points < 6",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What is the total best for Bruno junqueira",
+   "context": "CREATE TABLE table_name_32 (best INTEGER, name VARCHAR)",
+   "answer": "SELECT SUM(best) FROM table_name_32 WHERE name = \"bruno junqueira\"",
+   "pred": "SELECT SUM(best) FROM table_name_32 WHERE name = \"bruno junqueira\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the highest Rank with a density less than 376.37, the province was valverde, and an Area larger than 823?",
+   "context": "CREATE TABLE table_name_68 (rank INTEGER, area VARCHAR, density VARCHAR, province VARCHAR)",
+   "answer": "SELECT MAX(rank) FROM table_name_68 WHERE density < 376.37 AND province = \"valverde\" AND area > 823",
+   "pred": "SELECT MAX(rank) FROM table_name_68 WHERE density < 376.37 AND province = \"valverde\" AND area > 823",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the attendance at the Kings game when Anaheim was the visiting team?",
+   "context": "CREATE TABLE table_name_22 (attendance VARCHAR, visitor VARCHAR)",
+   "answer": "SELECT attendance FROM table_name_22 WHERE visitor = \"anaheim\"",
+   "pred": "SELECT attendance FROM table_name_22 WHERE visitor = \"anaheim\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What are all the schools that use the colors maroon and white",
+   "context": "CREATE TABLE table_15475116_1 (school VARCHAR, colors VARCHAR)",
+   "answer": "SELECT school FROM table_15475116_1 WHERE colors = \"Maroon and White\"",
+   "pred": "SELECT school FROM table_15475116_1 WHERE colors = \"Maroon and White\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What state had the name of wu for the royal house of ji?",
+   "context": "CREATE TABLE table_name_21 (state VARCHAR, royal_house VARCHAR, name VARCHAR)",
+   "answer": "SELECT state FROM table_name_21 WHERE royal_house = \"ji\" AND name = \"wu\"",
+   "pred": "SELECT state FROM table_name_21 WHERE royal_house = \"ji\" AND name = \"wu\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the lowest Number, when College is \"University of Alabama\"?",
+   "context": "CREATE TABLE table_name_48 (number INTEGER, college VARCHAR)",
+   "answer": "SELECT MIN(number) FROM table_name_48 WHERE college = \"university of alabama\"",
+   "pred": "SELECT MIN(number) FROM table_name_48 WHERE college = \"university of alabama\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the attendance at the game that had a loss of Crabtree (0-1)?",
+   "context": "CREATE TABLE table_name_34 (attendance VARCHAR, loss VARCHAR)",
+   "answer": "SELECT attendance FROM table_name_34 WHERE loss = \"crabtree (0-1)\"",
+   "pred": "SELECT attendance FROM table_name_34 WHERE loss = \"crabtree (0-1)\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What year has a original title of \"el tinte de la fama\"?",
+   "context": "CREATE TABLE table_name_81 (year__ceremony_ VARCHAR, original_title VARCHAR)",
+   "answer": "SELECT year__ceremony_ FROM table_name_81 WHERE original_title = \"el tinte de la fama\"",
+   "pred": "SELECT year__ceremony_ FROM table_name_81 WHERE original_title = \"el tinte de la fama\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Where was the September 3 game?",
+   "context": "CREATE TABLE table_name_15 (location VARCHAR, date VARCHAR)",
+   "answer": "SELECT location FROM table_name_15 WHERE date = \"september 3\"",
+   "pred": "SELECT location FROM table_name_15 WHERE date = \"september 3\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Aspect has a Programming of latv?",
+   "context": "CREATE TABLE table_name_18 (aspect VARCHAR, programming VARCHAR)",
+   "answer": "SELECT aspect FROM table_name_18 WHERE programming = \"latv\"",
+   "pred": "SELECT aspect FROM table_name_18 WHERE programming = \"latv\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What's the points classification of Stage 18 when the general classification was Denis Menchov?",
+   "context": "CREATE TABLE table_name_46 (points_classification VARCHAR, general_classification VARCHAR, stage VARCHAR)",
+   "answer": "SELECT points_classification FROM table_name_46 WHERE general_classification = \"denis menchov\" AND stage = \"18\"",
+   "pred": "SELECT points_classification FROM table_name_46 WHERE general_classification = \"denis menchov\" AND stage = \"18\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the lowest gold when there are 0 bronze and the total is less than 2, and silver is less than 0?",
+   "context": "CREATE TABLE table_name_24 (gold INTEGER, silver VARCHAR, bronze VARCHAR, total VARCHAR)",
+   "answer": "SELECT MIN(gold) FROM table_name_24 WHERE bronze = 0 AND total < 2 AND silver < 0",
+   "pred": "SELECT MIN(gold) FROM table_name_24 WHERE bronze = 0 AND total < 2 AND silver < 0",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who are the writers of the episodes directed by Justin Hartley?",
+   "context": "CREATE TABLE table_26464364_1 (written_by VARCHAR, directed_by VARCHAR)",
+   "answer": "SELECT written_by FROM table_26464364_1 WHERE directed_by = \"Justin Hartley\"",
+   "pred": "SELECT written_by FROM table_26464364_1 WHERE directed_by = \"Justin Hartley\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Tell me the league apps with league goals less than 2 and position of df and FA cup apps of 5",
+   "context": "CREATE TABLE table_name_35 (league_apps VARCHAR, fa_cup_apps VARCHAR, league_goals VARCHAR, position VARCHAR)",
+   "answer": "SELECT league_apps FROM table_name_35 WHERE league_goals < 2 AND position = \"df\" AND fa_cup_apps = \"5\"",
+   "pred": "SELECT league_apps FROM table_name_35 WHERE league_goals < 2 AND position = \"df\" AND fa_cup_apps = 5",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the Tie no when the Home team was wealdstone?",
+   "context": "CREATE TABLE table_name_34 (tie_no VARCHAR, home_team VARCHAR)",
+   "answer": "SELECT tie_no FROM table_name_34 WHERE home_team = \"wealdstone\"",
+   "pred": "SELECT tie_no FROM table_name_34 WHERE home_team = \"wealdstone\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many singers do we have?",
+   "context": "CREATE TABLE singer (Id VARCHAR)",
+   "answer": "SELECT COUNT(*) FROM singer",
+   "pred": "SELECT COUNT(*) FROM singer",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who had the high rebound total against golden state?",
+   "context": "CREATE TABLE table_13464416_4 (high_rebounds VARCHAR, team VARCHAR)",
+   "answer": "SELECT high_rebounds FROM table_13464416_4 WHERE team = \"Golden State\"",
+   "pred": "SELECT high_rebounds FROM table_13464416_4 WHERE team = \"Golden State\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the largest crowd at arden street oval?",
+   "context": "CREATE TABLE table_name_87 (crowd INTEGER, venue VARCHAR)",
+   "answer": "SELECT MAX(crowd) FROM table_name_87 WHERE venue = \"arden street oval\"",
+   "pred": "SELECT MAX(crowd) FROM table_name_87 WHERE venue = \"arden street oval\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the Time (EEST), when the Stage is ss8?",
+   "context": "CREATE TABLE table_name_5 (time__eest_ VARCHAR, stage VARCHAR)",
+   "answer": "SELECT time__eest_ FROM table_name_5 WHERE stage = \"ss8\"",
+   "pred": "SELECT time__eest_ FROM table_name_5 WHERE stage = \"ss8\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What name has a License of gpl, and an Actual version of 0.8.29wip4?",
+   "context": "CREATE TABLE table_name_46 (name VARCHAR, license VARCHAR, actual_version VARCHAR)",
+   "answer": "SELECT name FROM table_name_46 WHERE license = \"gpl\" AND actual_version = \"0.8.29wip4\"",
+   "pred": "SELECT name FROM table_name_46 WHERE license = \"gpl\" AND actual_version = \"0.8.29wip4\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the date of the k-league cup, which has less than 28 goals, at the jeonju venue?",
+   "context": "CREATE TABLE table_name_93 (date VARCHAR, competition VARCHAR, venue VARCHAR, goals VARCHAR)",
+   "answer": "SELECT date FROM table_name_93 WHERE venue = \"jeonju\" AND goals < 28 AND competition = \"k-league cup\"",
+   "pred": "SELECT date FROM table_name_93 WHERE venue = \"jeonju\" AND goals < 28 AND competition = \"k-league cup\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What murder (2012) rate per 100,00 also has a 1.616 as the peace (2012) GPI?",
+   "context": "CREATE TABLE table_name_26 (murder__2012__rate_per_100 VARCHAR, peace__2012__gpi VARCHAR)",
+   "answer": "SELECT murder__2012__rate_per_100, 000 FROM table_name_26 WHERE peace__2012__gpi = 1.616",
+   "pred": "SELECT murder__2012__rate_per_100 FROM table_name_26 WHERE peace__2012__gpi = \"1.616\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What is every specialization with the website Jstu.edu.bd",
+   "context": "CREATE TABLE table_2112260_1 (specialization VARCHAR, website VARCHAR)",
+   "answer": "SELECT specialization FROM table_2112260_1 WHERE website = \"jstu.edu.bd\"",
+   "pred": "SELECT specialization FROM table_2112260_1 WHERE website = \"Jstu.edu.bd\"",
+   "exact": true,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Who is the Winning Driver, when Most Laps Led is Dario Franchitti, and when Pole Position is H\u00e9lio Castroneves?",
+   "context": "CREATE TABLE table_name_10 (winning_driver VARCHAR, most_laps_led VARCHAR, pole_position VARCHAR)",
+   "answer": "SELECT winning_driver FROM table_name_10 WHERE most_laps_led = \"dario franchitti\" AND pole_position = \"h\u00e9lio castroneves\"",
+   "pred": "SELECT winning_driver FROM table_name_10 WHERE most_laps_led = \"dario franchitti\" AND pole_position = \"h\u00e9lio castroneves\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What team did the home team play on September 4?",
+   "context": "CREATE TABLE table_name_2 (opponent VARCHAR, date VARCHAR)",
+   "answer": "SELECT opponent FROM table_name_2 WHERE date = \"september 4\"",
+   "pred": "SELECT opponent FROM table_name_2 WHERE date = \"september 4\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which inhabitants have 2009 as the election, with cremona as the municipality?",
+   "context": "CREATE TABLE table_name_42 (inhabitants VARCHAR, election VARCHAR, municipality VARCHAR)",
+   "answer": "SELECT inhabitants FROM table_name_42 WHERE election = 2009 AND municipality = \"cremona\"",
+   "pred": "SELECT inhabitants FROM table_name_42 WHERE election = \"2009\" AND municipality = \"cremona\"",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the Record for a game less than 3 and the score was l 91\u201396 (ot)?",
+   "context": "CREATE TABLE table_name_19 (record VARCHAR, game VARCHAR, score VARCHAR)",
+   "answer": "SELECT record FROM table_name_19 WHERE game < 3 AND score = \"l 91\u201396 (ot)\"",
+   "pred": "SELECT record FROM table_name_19 WHERE game < 3 AND score = \"l 91\u201396 (ot)\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What's the original artist of the song performed in the top 3 episode?",
+   "context": "CREATE TABLE table_12310814_1 (original_artist VARCHAR, episode VARCHAR)",
+   "answer": "SELECT original_artist FROM table_12310814_1 WHERE episode = \"Top 3\"",
+   "pred": "SELECT original_artist FROM table_12310814_1 WHERE episode = \"Top 3\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "List the id of students who attended some courses?",
+   "context": "CREATE TABLE student_course_attendance (student_id VARCHAR)",
+   "answer": "SELECT student_id FROM student_course_attendance",
+   "pred": "SELECT student_id FROM student_course_attendance WHERE 1 = 1",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the average Lost entry for Newton, for games with a drawn less than 5?",
+   "context": "CREATE TABLE table_name_78 (lost INTEGER, team VARCHAR, drawn VARCHAR)",
+   "answer": "SELECT AVG(lost) FROM table_name_78 WHERE team = \"newton\" AND drawn < 5",
+   "pred": "SELECT AVG(lost) FROM table_name_78 WHERE team = \"newton\" AND drawn < 5",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "When was pedro rodr\u00edguez the winning driver?",
+   "context": "CREATE TABLE table_name_77 (date VARCHAR, winning_driver VARCHAR)",
+   "answer": "SELECT date FROM table_name_77 WHERE winning_driver = \"pedro rodr\u00edguez\"",
+   "pred": "SELECT date FROM table_name_77 WHERE winning_driver = \"pedro rodr\u00edguez\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "When has a Result of 0\u20132 and a Opponent of aberdeen?",
+   "context": "CREATE TABLE table_name_13 (date VARCHAR, result VARCHAR, opponent VARCHAR)",
+   "answer": "SELECT date FROM table_name_13 WHERE result = \"0\u20132\" AND opponent = \"aberdeen\"",
+   "pred": "SELECT date FROM table_name_13 WHERE result = \"0\u20132\" AND opponent = \"aberdeen\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many losses did the 1943 MLB have?",
+   "context": "CREATE TABLE table_name_61 (losses INTEGER, mlb_season VARCHAR)",
+   "answer": "SELECT AVG(losses) FROM table_name_61 WHERE mlb_season = \"1943\"",
+   "pred": "SELECT AVG(losses) FROM table_name_61 WHERE mlb_season = 1943",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many different users wrote some reviews?",
+   "context": "CREATE TABLE review (u_id VARCHAR)",
+   "answer": "SELECT COUNT(DISTINCT u_id) FROM review",
+   "pred": "SELECT COUNT(DISTINCT u_id) FROM review",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Find the name of the teacher who teaches the largest number of students.",
+   "context": "CREATE TABLE list (classroom VARCHAR); CREATE TABLE teachers (firstname VARCHAR, lastname VARCHAR, classroom VARCHAR)",
+   "answer": "SELECT T2.firstname, T2.lastname FROM list AS T1 JOIN teachers AS T2 ON T1.classroom = T2.classroom GROUP BY T2.firstname, T2.lastname ORDER BY COUNT(*) DESC LIMIT 1",
+   "pred": "SELECT T2.firstname, T2.lastname FROM teachers AS T1 JOIN list AS T2 ON T1.classroom = T2.classroom GROUP BY T1.classroom ORDER BY COUNT(*) DESC LIMIT 1",
+   "exact": false,
+   "exec": false,
+   "valid": false
+  },
+  {
+   "question": "What are the results for the game with 82,113 attending?",
+   "context": "CREATE TABLE table_name_41 (result VARCHAR, attendance VARCHAR)",
+   "answer": "SELECT result FROM table_name_41 WHERE attendance = \"82,113\"",
+   "pred": "SELECT result FROM table_name_41 WHERE attendance = 82 OFFSET 113",
+   "exact": false,
+   "exec": false,
+   "valid": false
+  },
+  {
+   "question": "What location was the game with the result of 29-14?",
+   "context": "CREATE TABLE table_name_11 (location VARCHAR, result VARCHAR)",
+   "answer": "SELECT location FROM table_name_11 WHERE result = \"29-14\"",
+   "pred": "SELECT location FROM table_name_11 WHERE result = \"29-14\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "what's the\u00a0nhl team\u00a0with\u00a0college/junior/club team\u00a0being brandon wheat kings (wchl)",
+   "context": "CREATE TABLE table_1473672_9 (nhl_team VARCHAR, college_junior_club_team VARCHAR)",
+   "answer": "SELECT nhl_team FROM table_1473672_9 WHERE college_junior_club_team = \"Brandon Wheat Kings (WCHL)\"",
+   "pred": "SELECT nhl_team FROM table_1473672_9 WHERE college_junior_club_team = \"Brandon Wheat Kings (WCHL)\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the abbreviation of Airline \"JetBlue Airways\"?",
+   "context": "CREATE TABLE AIRLINES (Abbreviation VARCHAR, Airline VARCHAR)",
+   "answer": "SELECT Abbreviation FROM AIRLINES WHERE Airline = \"JetBlue Airways\"",
+   "pred": "SELECT Abbreviation FROM AIRLINES WHERE Airline = \"JetBlue Airways\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "When was the school in Salem, Massachusetts located?",
+   "context": "CREATE TABLE table_1974545_2 (founded VARCHAR, location VARCHAR)",
+   "answer": "SELECT founded FROM table_1974545_2 WHERE location = \"Salem, Massachusetts\"",
+   "pred": "SELECT founded FROM table_1974545_2 WHERE location = \"Salem, Massachusetts\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Team 2 of Yokohama F. Marinos in the n/a venue had what score?",
+   "context": "CREATE TABLE table_name_90 (score VARCHAR, venue VARCHAR, team_2 VARCHAR)",
+   "answer": "SELECT score FROM table_name_90 WHERE venue = \"n/a\" AND team_2 = \"yokohama f. marinos\"",
+   "pred": "SELECT score FROM table_name_90 WHERE venue = \"n/a\" AND team_2 = \"yokohama f. marinos\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many opengl have the ironlake ( clarkdale ) code name?",
+   "context": "CREATE TABLE table_25839957_5 (opengl VARCHAR, code_name VARCHAR)",
+   "answer": "SELECT COUNT(opengl) FROM table_25839957_5 WHERE code_name = \"Ironlake ( Clarkdale )\"",
+   "pred": "SELECT COUNT(opengl) FROM table_25839957_5 WHERE code_name = \"Ironlake (Clarkdale)\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What type is locomotive CTN 1364?",
+   "context": "CREATE TABLE table_name_29 (type VARCHAR, locomotive_number VARCHAR)",
+   "answer": "SELECT type FROM table_name_29 WHERE locomotive_number = \"ctn 1364\"",
+   "pred": "SELECT type FROM table_name_29 WHERE locomotive_number = \"ctn 1364\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "In what city is RJSN located?",
+   "context": "CREATE TABLE table_name_57 (city VARCHAR, icao VARCHAR)",
+   "answer": "SELECT city FROM table_name_57 WHERE icao = \"rjsn\"",
+   "pred": "SELECT city FROM table_name_57 WHERE icao = \"rjsn\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What date was the game held at UMBC Field?",
+   "context": "CREATE TABLE table_name_47 (date VARCHAR, site VARCHAR)",
+   "answer": "SELECT date FROM table_name_47 WHERE site = \"umbc field\"",
+   "pred": "SELECT date FROM table_name_47 WHERE site = \"umbc field\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the nationality of Mattias Modig?",
+   "context": "CREATE TABLE table_name_86 (nationality VARCHAR, player VARCHAR)",
+   "answer": "SELECT nationality FROM table_name_86 WHERE player = \"mattias modig\"",
+   "pred": "SELECT nationality FROM table_name_86 WHERE player = \"mattias modig\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Show the id, the date of account opened, the account name, and other account detail for all accounts.",
+   "context": "CREATE TABLE Accounts (account_id VARCHAR, date_account_opened VARCHAR, account_name VARCHAR, other_account_details VARCHAR)",
+   "answer": "SELECT account_id, date_account_opened, account_name, other_account_details FROM Accounts",
+   "pred": "SELECT account_id, date_account_opened, account_name, other_account_details FROM Accounts",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the score for the opponent luk\u00e1\u0161 dlouh\u00fd leander paes?",
+   "context": "CREATE TABLE table_name_75 (score VARCHAR, opponents VARCHAR)",
+   "answer": "SELECT score FROM table_name_75 WHERE opponents = \"luk\u00e1\u0161 dlouh\u00fd leander paes\"",
+   "pred": "SELECT score FROM table_name_75 WHERE opponents = \"luk\u00e1\u0161 dlouh\u00fd leander paes\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the place of Mark O'Meara?",
+   "context": "CREATE TABLE table_name_28 (place VARCHAR, player VARCHAR)",
+   "answer": "SELECT place FROM table_name_28 WHERE player = \"mark o'meara\"",
+   "pred": "SELECT place FROM table_name_28 WHERE player = \"mark o'meara\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "When the number of wickets is 29, what was the economy?",
+   "context": "CREATE TABLE table_28797906_3 (economy VARCHAR, wickets VARCHAR)",
+   "answer": "SELECT economy FROM table_28797906_3 WHERE wickets = 29",
+   "pred": "SELECT economy FROM table_28797906_3 WHERE wickets = 29",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many route numbers occur for the origin of Birmingham and destination of Bristol?",
+   "context": "CREATE TABLE table_3005999_1 (route_number VARCHAR, origin VARCHAR, destination VARCHAR)",
+   "answer": "SELECT COUNT(route_number) FROM table_3005999_1 WHERE origin = \"Birmingham\" AND destination = \"Bristol\"",
+   "pred": "SELECT COUNT(route_number) FROM table_3005999_1 WHERE origin = \"Birmingham\" AND destination = \"Bristol\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the highest number listed for matches?",
+   "context": "CREATE TABLE table_28846752_8 (matches INTEGER)",
+   "answer": "SELECT MAX(matches) FROM table_28846752_8",
+   "pred": "SELECT MAX(matches) FROM table_28846752_8",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Can you tell me the Record that has the Game of 19?",
+   "context": "CREATE TABLE table_name_72 (record VARCHAR, game VARCHAR)",
+   "answer": "SELECT record FROM table_name_72 WHERE game = 19",
+   "pred": "SELECT record FROM table_name_72 WHERE game = \"19\"",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the average of the swimsuit smaller than 9.545 , of Iowa, with an evening gown larger than 9.625?",
+   "context": "CREATE TABLE table_name_34 (average INTEGER, evening_gown VARCHAR, swimsuit VARCHAR, state VARCHAR)",
+   "answer": "SELECT AVG(average) FROM table_name_34 WHERE swimsuit < 9.545 AND state = \"iowa\" AND evening_gown > 9.625",
+   "pred": "SELECT AVG(average) FROM table_name_34 WHERE swimsuit < 9.545 AND state = \"iowa\" AND evening_gown > 9.625",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What year was the most recent US Open championship?",
+   "context": "CREATE TABLE table_1514559_1 (year INTEGER, championship VARCHAR)",
+   "answer": "SELECT MAX(year) FROM table_1514559_1 WHERE championship = \"US Open\"",
+   "pred": "SELECT MAX(year) FROM table_1514559_1 WHERE championship = \"US Open\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What Japanese show on NHK had average ratings of 9.2%?",
+   "context": "CREATE TABLE table_name_26 (japanese_title VARCHAR, tv_station VARCHAR, average_ratings VARCHAR)",
+   "answer": "SELECT japanese_title FROM table_name_26 WHERE tv_station = \"nhk\" AND average_ratings = \"9.2%\"",
+   "pred": "SELECT japanese_title FROM table_name_26 WHERE tv_station = \"nhk\" AND average_ratings = \"9.2%\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is American, when British is \"\u026a, \u0259\", and when Initial-Syllable Open/Semi-Open Unstressed Vowels is \"\u00e6 /\u0268/\"?",
+   "context": "CREATE TABLE table_name_23 (american VARCHAR, british VARCHAR, initial_syllable_open_semi_open_unstressed_vowels VARCHAR)",
+   "answer": "SELECT american FROM table_name_23 WHERE british = \"\u026a, \u0259\" AND initial_syllable_open_semi_open_unstressed_vowels = \"\u00e6 /\u0268/\"",
+   "pred": "SELECT american FROM table_name_23 WHERE british = \"\u026a, \u0259\" AND initial_syllable_open_semi_open_unstressed_vowels = \"\u00e6 /\u0268/\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the name of Rank 5?",
+   "context": "CREATE TABLE table_name_89 (name VARCHAR, rank VARCHAR)",
+   "answer": "SELECT name FROM table_name_89 WHERE rank = 5",
+   "pred": "SELECT name FROM table_name_89 WHERE rank = 5",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the name with a Decile less than 10, and a Roll of 297?",
+   "context": "CREATE TABLE table_name_55 (name VARCHAR, decile VARCHAR, roll VARCHAR)",
+   "answer": "SELECT name FROM table_name_55 WHERE decile < 10 AND roll = 297",
+   "pred": "SELECT name FROM table_name_55 WHERE decile < 10 AND roll = 297",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which has and average less than 3 and the lowest yards?",
+   "context": "CREATE TABLE table_name_56 (yards INTEGER, avg INTEGER)",
+   "answer": "SELECT MIN(yards) FROM table_name_56 WHERE avg < 3",
+   "pred": "SELECT MIN(yards) FROM table_name_56 WHERE avg < 3",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the average number of goals that occurred in Hong Kong Stadium, Hong Kong?",
+   "context": "CREATE TABLE table_name_53 (goals INTEGER, venue VARCHAR)",
+   "answer": "SELECT AVG(goals) FROM table_name_53 WHERE venue = \"hong kong stadium, hong kong\"",
+   "pred": "SELECT AVG(goals) FROM table_name_53 WHERE venue = \"hong kong stadium, hong kong\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many ansi codes are there for latitude 48.142938?",
+   "context": "CREATE TABLE table_18600760_20 (ansi_code VARCHAR, latitude VARCHAR)",
+   "answer": "SELECT COUNT(ansi_code) FROM table_18600760_20 WHERE latitude = \"48.142938\"",
+   "pred": "SELECT COUNT(ansi_code) FROM table_18600760_20 WHERE latitude = \"48.142938\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What game was located at the Los Angeles Memorial Sports Arena?",
+   "context": "CREATE TABLE table_name_60 (game VARCHAR, location_attendance VARCHAR)",
+   "answer": "SELECT game FROM table_name_60 WHERE location_attendance = \"los angeles memorial sports arena\"",
+   "pred": "SELECT game FROM table_name_60 WHERE location_attendance = \"los angeles memorial sports arena\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What year did deputy prime minister Mariano Rajoy Brey take office?",
+   "context": "CREATE TABLE table_name_9 (took_office INTEGER, deputy_prime_minister VARCHAR)",
+   "answer": "SELECT SUM(took_office) FROM table_name_9 WHERE deputy_prime_minister = \"mariano rajoy brey\"",
+   "pred": "SELECT MAX(took_office) FROM table_name_9 WHERE deputy_prime_minister = \"mariano rajoy brey\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What is the name of episode 165?",
+   "context": "CREATE TABLE table_2226817_9 (title VARCHAR, no_in_series VARCHAR)",
+   "answer": "SELECT title FROM table_2226817_9 WHERE no_in_series = 165",
+   "pred": "SELECT title FROM table_2226817_9 WHERE no_in_series = 165",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the condition with platelet count of unaffected and bleeding time of unaffected with prothrombin time of prolonged and partial thromboplastin time of prolonged",
+   "context": "CREATE TABLE table_name_52 (condition VARCHAR, partial_thromboplastin_time VARCHAR, prothrombin_time VARCHAR, platelet_count VARCHAR, bleeding_time VARCHAR)",
+   "answer": "SELECT condition FROM table_name_52 WHERE platelet_count = \"unaffected\" AND bleeding_time = \"unaffected\" AND prothrombin_time = \"prolonged\" AND partial_thromboplastin_time = \"prolonged\"",
+   "pred": "SELECT condition FROM table_name_52 WHERE platelet_count = \"unaffected\" AND bleeding_time = \"unaffected\" AND prothrombin_time = \"prolonged\" AND partial_thromboplastin_time = \"prolonged\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the Final Four with a win percentage of .750?",
+   "context": "CREATE TABLE table_name_32 (final_four VARCHAR, win__percentage VARCHAR)",
+   "answer": "SELECT final_four FROM table_name_32 WHERE win__percentage = \".750\"",
+   "pred": "SELECT final_four FROM table_name_32 WHERE win__percentage = \"750\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What is Steve Lowery's Place?",
+   "context": "CREATE TABLE table_name_78 (place VARCHAR, player VARCHAR)",
+   "answer": "SELECT place FROM table_name_78 WHERE player = \"steve lowery\"",
+   "pred": "SELECT place FROM table_name_78 WHERE player = \"steve lowery\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "List all the event names by year from the most recent to the oldest.",
+   "context": "CREATE TABLE event (name VARCHAR, YEAR VARCHAR)",
+   "answer": "SELECT name FROM event ORDER BY YEAR DESC",
+   "pred": "SELECT name FROM event ORDER BY YEAR DESC",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What's the title of the episode with series number 36?",
+   "context": "CREATE TABLE table_28146944_2 (title VARCHAR, no_in_series VARCHAR)",
+   "answer": "SELECT title FROM table_28146944_2 WHERE no_in_series = 36",
+   "pred": "SELECT title FROM table_28146944_2 WHERE no_in_series = 36",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which song was by artist Gino Vannelli?",
+   "context": "CREATE TABLE table_name_15 (song VARCHAR, artist VARCHAR)",
+   "answer": "SELECT song FROM table_name_15 WHERE artist = \"gino vannelli\"",
+   "pred": "SELECT song FROM table_name_15 WHERE artist = \"gino vannelli\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Played has a Lost larger than 4, and a Team of am\u00e9rica, and Points smaller than 5?",
+   "context": "CREATE TABLE table_name_4 (played INTEGER, points VARCHAR, lost VARCHAR, team VARCHAR)",
+   "answer": "SELECT SUM(played) FROM table_name_4 WHERE lost > 4 AND team = \"am\u00e9rica\" AND points < 5",
+   "pred": "SELECT AVG(played) FROM table_name_4 WHERE lost > 4 AND team = \"am\u00e9rica\" AND points < 5",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Tell me the time/retired for Laps of 42 and Grids of 4",
+   "context": "CREATE TABLE table_name_74 (time_retired VARCHAR, laps VARCHAR, grid VARCHAR)",
+   "answer": "SELECT time_retired FROM table_name_74 WHERE laps = 42 AND grid = 4",
+   "pred": "SELECT time_retired FROM table_name_74 WHERE laps = 42 AND grid = 4",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the outcome for zurich",
+   "context": "CREATE TABLE table_23944006_4 (outcome VARCHAR, championship VARCHAR)",
+   "answer": "SELECT outcome FROM table_23944006_4 WHERE championship = \"Zurich\"",
+   "pred": "SELECT outcome FROM table_23944006_4 WHERE championship = \"Zurich\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which school has a state authority and a roll of 318?",
+   "context": "CREATE TABLE table_name_27 (name VARCHAR, authority VARCHAR, roll VARCHAR)",
+   "answer": "SELECT name FROM table_name_27 WHERE authority = \"state\" AND roll = 318",
+   "pred": "SELECT name FROM table_name_27 WHERE authority = \"state\" AND roll = 318",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "what is the lowest crowd at kardinia park",
+   "context": "CREATE TABLE table_name_50 (crowd INTEGER, venue VARCHAR)",
+   "answer": "SELECT MIN(crowd) FROM table_name_50 WHERE venue = \"kardinia park\"",
+   "pred": "SELECT MIN(crowd) FROM table_name_50 WHERE venue = \"kardinia park\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the sum of Overall, when Round is less than 24, and when College is North Carolina State?",
+   "context": "CREATE TABLE table_name_50 (overall INTEGER, round VARCHAR, college VARCHAR)",
+   "answer": "SELECT SUM(overall) FROM table_name_50 WHERE round < 24 AND college = \"north carolina state\"",
+   "pred": "SELECT SUM(overall) FROM table_name_50 WHERE round < 24 AND college = \"north carolina state\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the total number of votes if Scotland cast 35?",
+   "context": "CREATE TABLE table_10128185_2 (scotland VARCHAR, total VARCHAR)",
+   "answer": "SELECT COUNT(scotland) FROM table_10128185_2 WHERE total = 35",
+   "pred": "SELECT COUNT(scotland) FROM table_10128185_2 WHERE total = 35",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What year was the team with the nickname pride established?",
+   "context": "CREATE TABLE table_name_14 (established VARCHAR, nickname VARCHAR)",
+   "answer": "SELECT COUNT(established) FROM table_name_14 WHERE nickname = \"pride\"",
+   "pred": "SELECT established FROM table_name_14 WHERE nickname = \"pride\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "How many teams eliminated when 11 teams started?",
+   "context": "CREATE TABLE table_23995075_2 (teams_that_have_been_eliminated VARCHAR, teams_started VARCHAR)",
+   "answer": "SELECT teams_that_have_been_eliminated FROM table_23995075_2 WHERE teams_started = \"11\"",
+   "pred": "SELECT COUNT(teams_that_have_been_eliminated) FROM table_23995075_2 WHERE teams_started = \"11\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "How many points did ginger have when she was ranked 5th on a 350cc class bike?",
+   "context": "CREATE TABLE table_name_73 (points VARCHAR, class VARCHAR, rank VARCHAR)",
+   "answer": "SELECT COUNT(points) FROM table_name_73 WHERE class = \"350cc\" AND rank = \"5th\"",
+   "pred": "SELECT COUNT(points) FROM table_name_73 WHERE class = \"350cc\" AND rank = \"5th\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "If the poverty rate is 12.9%, what is the county?",
+   "context": "CREATE TABLE table_22815568_6 (county VARCHAR, poverty_rate VARCHAR)",
+   "answer": "SELECT county FROM table_22815568_6 WHERE poverty_rate = \"12.9%\"",
+   "pred": "SELECT county FROM table_22815568_6 WHERE poverty_rate = \"12.9%\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What country did the client Agiba-agip work in?",
+   "context": "CREATE TABLE table_name_5 (country VARCHAR, client VARCHAR)",
+   "answer": "SELECT country FROM table_name_5 WHERE client = \"agiba-agip\"",
+   "pred": "SELECT country FROM table_name_5 WHERE client = \"agiba-agip\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the lowest GDP (ppp) per capita?",
+   "context": "CREATE TABLE table_25869317_1 (gdp__ppp__per_capita INTEGER)",
+   "answer": "SELECT MIN(gdp__ppp__per_capita) FROM table_25869317_1",
+   "pred": "SELECT MIN(gdp__ppp__per_capita) FROM table_25869317_1",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many were in the crowd when there was a game at Junction Oval?",
+   "context": "CREATE TABLE table_name_88 (crowd INTEGER, venue VARCHAR)",
+   "answer": "SELECT SUM(crowd) FROM table_name_88 WHERE venue = \"junction oval\"",
+   "pred": "SELECT SUM(crowd) FROM table_name_88 WHERE venue = \"junction oval\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What county is Fountain City?",
+   "context": "CREATE TABLE table_name_8 (_number___county VARCHAR, location VARCHAR)",
+   "answer": "SELECT _number___county FROM table_name_8 WHERE location = \"fountain city\"",
+   "pred": "SELECT _number___county FROM table_name_8 WHERE location = \"fountain city\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What road is associated with Carson Valley county?",
+   "context": "CREATE TABLE table_25438110_5 (road VARCHAR, county VARCHAR)",
+   "answer": "SELECT road FROM table_25438110_5 WHERE county = \"Carson Valley\"",
+   "pred": "SELECT road FROM table_25438110_5 WHERE county = \"Carson Valley\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which city is the University of Montana located in?",
+   "context": "CREATE TABLE table_name_80 (city VARCHAR, host VARCHAR)",
+   "answer": "SELECT city FROM table_name_80 WHERE host = \"university of montana\"",
+   "pred": "SELECT city FROM table_name_80 WHERE host = \"university of montana\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many games are played for all students?",
+   "context": "CREATE TABLE Sportsinfo (gamesplayed INTEGER)",
+   "answer": "SELECT SUM(gamesplayed) FROM Sportsinfo",
+   "pred": "SELECT SUM(gamesplayed) FROM Sportsinfo",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "In which season did Fc Pakhtakor Tashkent represent the country of Uzbekistan with more than 6 apps?",
+   "context": "CREATE TABLE table_name_72 (season INTEGER, apps VARCHAR, country VARCHAR, team VARCHAR)",
+   "answer": "SELECT MAX(season) FROM table_name_72 WHERE country = \"uzbekistan\" AND team = \"fc pakhtakor tashkent\" AND apps > 6",
+   "pred": "SELECT SUM(season) FROM table_name_72 WHERE country = \"uzbekistan\" AND team = \"fc pakhtakor tashkent\" AND apps > 6",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Who had the high rebounds on February 24?",
+   "context": "CREATE TABLE table_name_36 (high_rebounds VARCHAR, date VARCHAR)",
+   "answer": "SELECT high_rebounds FROM table_name_36 WHERE date = \"february 24\"",
+   "pred": "SELECT high_rebounds FROM table_name_36 WHERE date = \"february 24\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which team has a location attendance of Air Canada Centre 19,800 with a record of 41\u201333?",
+   "context": "CREATE TABLE table_name_53 (team VARCHAR, location_attendance VARCHAR, record VARCHAR)",
+   "answer": "SELECT team FROM table_name_53 WHERE location_attendance = \"air canada centre 19,800\" AND record = \"41\u201333\"",
+   "pred": "SELECT team FROM table_name_53 WHERE location_attendance = \"air canada centre 19,800\" AND record = \"41\u201333\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the least clock rate mhz",
+   "context": "CREATE TABLE table_142573_1 (clock_rate__mhz_ INTEGER)",
+   "answer": "SELECT MIN(clock_rate__mhz_) FROM table_142573_1",
+   "pred": "SELECT MIN(clock_rate__mhz_) FROM table_142573_1",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which kingdom has Suin as its capital?",
+   "context": "CREATE TABLE table_name_65 (name_of_kingdom VARCHAR, capital VARCHAR)",
+   "answer": "SELECT name_of_kingdom FROM table_name_65 WHERE capital = \"suin\"",
+   "pred": "SELECT name_of_kingdom FROM table_name_65 WHERE capital = \"suin\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the high points when the team was Washington?",
+   "context": "CREATE TABLE table_27755603_10 (high_points VARCHAR, team VARCHAR)",
+   "answer": "SELECT high_points FROM table_27755603_10 WHERE team = \"Washington\"",
+   "pred": "SELECT high_points FROM table_27755603_10 WHERE team = \"Washington\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many Bangladeshi citizens are there in the borough ranked at number 7?",
+   "context": "CREATE TABLE table_19149550_9 (bangladeshi_population INTEGER, rank VARCHAR)",
+   "answer": "SELECT MIN(bangladeshi_population) FROM table_19149550_9 WHERE rank = 7",
+   "pred": "SELECT MAX(bangladeshi_population) FROM table_19149550_9 WHERE rank = 7",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "what is the winner of stage 3",
+   "context": "CREATE TABLE table_name_75 (winner VARCHAR, stage VARCHAR)",
+   "answer": "SELECT winner FROM table_name_75 WHERE stage = 3",
+   "pred": "SELECT winner FROM table_name_75 WHERE stage = 3",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many losses does Central Blues have?",
+   "context": "CREATE TABLE table_26200568_16 (losses INTEGER, club VARCHAR)",
+   "answer": "SELECT MAX(losses) FROM table_26200568_16 WHERE club = \"Central Blues\"",
+   "pred": "SELECT MAX(losses) FROM table_26200568_16 WHERE club = \"Central Blues\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What drama role does she play in 1973?",
+   "context": "CREATE TABLE table_name_57 (role VARCHAR, genre VARCHAR, year VARCHAR)",
+   "answer": "SELECT role FROM table_name_57 WHERE genre = \"drama\" AND year = 1973",
+   "pred": "SELECT role FROM table_name_57 WHERE genre = \"drama\" AND year = 1973",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who is the co-contestant (yaar vs. Pyaar) with Vishal Singh as the main contestant?",
+   "context": "CREATE TABLE table_name_90 (co_contestant__yaar_vs_pyaar_ VARCHAR, main_contestant VARCHAR)",
+   "answer": "SELECT co_contestant__yaar_vs_pyaar_ FROM table_name_90 WHERE main_contestant = \"vishal singh\"",
+   "pred": "SELECT co_contestant__yaar_vs_pyaar_ FROM table_name_90 WHERE main_contestant = \"vishal singh\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the value for model if processor is Kentsfield and brand name is Xeon?",
+   "context": "CREATE TABLE table_2467150_2 (model__list_ VARCHAR, processor VARCHAR, brand_name VARCHAR)",
+   "answer": "SELECT model__list_ FROM table_2467150_2 WHERE processor = \"Kentsfield\" AND brand_name = \"Xeon\"",
+   "pred": "SELECT model__list_ FROM table_2467150_2 WHERE processor = \"Kentsfield\" AND brand_name = \"Xeon\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What date has a solitudering circuit",
+   "context": "CREATE TABLE table_1140103_6 (date VARCHAR, circuit VARCHAR)",
+   "answer": "SELECT date FROM table_1140103_6 WHERE circuit = \"Solitudering\"",
+   "pred": "SELECT date FROM table_1140103_6 WHERE circuit = \"Solitudering\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Time has an Opponent of shamil abdurahimov?",
+   "context": "CREATE TABLE table_name_39 (time VARCHAR, opponent VARCHAR)",
+   "answer": "SELECT time FROM table_name_39 WHERE opponent = \"shamil abdurahimov\"",
+   "pred": "SELECT time FROM table_name_39 WHERE opponent = \"shamil abdurahimov\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the number of losses that coach John Kowalski has with a PTS smaller than 9?",
+   "context": "CREATE TABLE table_name_84 (loss VARCHAR, coach VARCHAR, pts VARCHAR)",
+   "answer": "SELECT COUNT(loss) FROM table_name_84 WHERE coach = \"john kowalski\" AND pts < 9",
+   "pred": "SELECT COUNT(loss) FROM table_name_84 WHERE coach = \"john kowalski\" AND pts < 9",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "what is the arrival time for no. 14?",
+   "context": "CREATE TABLE table_14688744_2 (arrival VARCHAR, no VARCHAR)",
+   "answer": "SELECT arrival FROM table_14688744_2 WHERE no = 14",
+   "pred": "SELECT arrival FROM table_14688744_2 WHERE no = 14",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "In language where Wednesday is \u09ac\u09c1\u09a7\u09ac\u09be\u09b0 budhbar, what is Thursday?",
+   "context": "CREATE TABLE table_1277350_3 (thursday_guru__jupiter_ VARCHAR, wednesday_budha__mercury_ VARCHAR)",
+   "answer": "SELECT thursday_guru__jupiter_ FROM table_1277350_3 WHERE wednesday_budha__mercury_ = \"\u09ac\u09c1\u09a7\u09ac\u09be\u09b0 Budhbar\"",
+   "pred": "SELECT thursday_guru__jupiter_ FROM table_1277350_3 WHERE wednesday_budha__mercury_ = \"\u09ac\u09c1\u09a7\u09ac\u09be\u09b0 budhbar\"",
+   "exact": true,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What episode had a run time of 24:18?",
+   "context": "CREATE TABLE table_2101431_1 (episode VARCHAR, run_time VARCHAR)",
+   "answer": "SELECT episode FROM table_2101431_1 WHERE run_time = \"24:18\"",
+   "pred": "SELECT episode FROM table_2101431_1 WHERE run_time = \"24:18\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the tournament when 2010 is not held?",
+   "context": "CREATE TABLE table_name_86 (tournament VARCHAR)",
+   "answer": "SELECT tournament FROM table_name_86 WHERE 2010 = \"not held\"",
+   "pred": "SELECT 2010 FROM table_name_86 WHERE 2010 <> \"2010\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Which players have made a total of 12 extra points?",
+   "context": "CREATE TABLE table_14342592_5 (player VARCHAR, extra_points VARCHAR)",
+   "answer": "SELECT player FROM table_14342592_5 WHERE extra_points = 12",
+   "pred": "SELECT player FROM table_14342592_5 WHERE extra_points = 12",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "In the year (ceremony) 1998 (71st), what are all the main languages?",
+   "context": "CREATE TABLE table_26385848_1 (main_language_s_ VARCHAR, year__ceremony_ VARCHAR)",
+   "answer": "SELECT main_language_s_ FROM table_26385848_1 WHERE year__ceremony_ = \"1998 (71st)\"",
+   "pred": "SELECT main_language_s_ FROM table_26385848_1 WHERE year__ceremony_ = \"1998 (71st)\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Does daystar television network provide HDTV?",
+   "context": "CREATE TABLE table_name_50 (hdtv VARCHAR, television_service VARCHAR)",
+   "answer": "SELECT hdtv FROM table_name_50 WHERE television_service = \"daystar television network\"",
+   "pred": "SELECT hdtv FROM table_name_50 WHERE television_service = \"daystar\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What country that has LP as a format?",
+   "context": "CREATE TABLE table_name_55 (country VARCHAR, format VARCHAR)",
+   "answer": "SELECT country FROM table_name_55 WHERE format = \"lp\"",
+   "pred": "SELECT country FROM table_name_55 WHERE format = \"lp\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the BB Pop for the song with RIAA of G that was in a year earlier than 1961?",
+   "context": "CREATE TABLE table_name_8 (bb_pop VARCHAR, riaa VARCHAR, year VARCHAR)",
+   "answer": "SELECT bb_pop FROM table_name_8 WHERE riaa = \"g\" AND year < 1961",
+   "pred": "SELECT bb_pop FROM table_name_8 WHERE riaa = \"g\" AND year < 1961",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the average episode # located in Tanzania and whose # in season is larger than 5?",
+   "context": "CREATE TABLE table_name_65 (episode__number INTEGER, location VARCHAR, _number_in_season VARCHAR)",
+   "answer": "SELECT AVG(episode__number) FROM table_name_65 WHERE location = \"tanzania\" AND _number_in_season > 5",
+   "pred": "SELECT AVG(episode__number) FROM table_name_65 WHERE location = \"tanzania\" AND _number_in_season > 5",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the day 3 when day 4 is fr.?",
+   "context": "CREATE TABLE table_name_45 (day_3 VARCHAR, day_4 VARCHAR)",
+   "answer": "SELECT day_3 FROM table_name_45 WHERE day_4 = \"fr.\"",
+   "pred": "SELECT day_3 FROM table_name_45 WHERE day_4 = \"fr.\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "List the ids, names and market shares of all browsers.",
+   "context": "CREATE TABLE browser (id VARCHAR, name VARCHAR, market_share VARCHAR)",
+   "answer": "SELECT id, name, market_share FROM browser",
+   "pred": "SELECT id, name, market_share FROM browser",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which away team played at MCG?",
+   "context": "CREATE TABLE table_name_55 (away_team VARCHAR, venue VARCHAR)",
+   "answer": "SELECT away_team FROM table_name_55 WHERE venue = \"mcg\"",
+   "pred": "SELECT away_team FROM table_name_55 WHERE venue = \"mcg\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Pick has a Player of chuck bryant, and an NFL Club of san diego chargers?",
+   "context": "CREATE TABLE table_name_58 (pick VARCHAR, player VARCHAR, nfl_club VARCHAR)",
+   "answer": "SELECT pick FROM table_name_58 WHERE player = \"chuck bryant\" AND nfl_club = \"san diego chargers\"",
+   "pred": "SELECT pick FROM table_name_58 WHERE player = \"chuck bryant\" AND nfl_club = \"san diego chargers\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which district has a Republican elected?",
+   "context": "CREATE TABLE table_1342315_12 (district VARCHAR, party VARCHAR)",
+   "answer": "SELECT district FROM table_1342315_12 WHERE party = \"Republican\"",
+   "pred": "SELECT district FROM table_1342315_12 WHERE party = \"Republican\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Find the address and staff number of the shops that do not have any happy hour.",
+   "context": "CREATE TABLE shop (address VARCHAR, num_of_staff VARCHAR, shop_id VARCHAR); CREATE TABLE happy_hour (address VARCHAR, num_of_staff VARCHAR, shop_id VARCHAR)",
+   "answer": "SELECT address, num_of_staff FROM shop WHERE NOT shop_id IN (SELECT shop_id FROM happy_hour)",
+   "pred": "SELECT T1.address, T1.num_of_staff FROM shop AS T1 JOIN happy_hour AS T2 ON T1.shop_id = T2.shop_id WHERE T2.num_of_staff = 0",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Name the pe\u030dh-\u014de-j\u012b  for \u524d\u91d1\u5340",
+   "context": "CREATE TABLE table_17015_2 (pe\u030dh_\u014de_j\u012b VARCHAR, chinese VARCHAR)",
+   "answer": "SELECT pe\u030dh_\u014de_j\u012b FROM table_17015_2 WHERE chinese = \"\u524d\u91d1\u5340\"",
+   "pred": "SELECT pe\u030dh_\u014de_j\u012b FROM table_17015_2 WHERE chinese = \"\u524d\u91d1\u5340\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many legs were lost when the high checkout was 101?",
+   "context": "CREATE TABLE table_27906667_2 (legs_lost VARCHAR, high_checkout VARCHAR)",
+   "answer": "SELECT COUNT(legs_lost) FROM table_27906667_2 WHERE high_checkout = 101",
+   "pred": "SELECT COUNT(legs_lost) FROM table_27906667_2 WHERE high_checkout = \"101\"",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the smallest number of runs?",
+   "context": "CREATE TABLE table_26041144_10 (runs INTEGER)",
+   "answer": "SELECT MIN(runs) FROM table_26041144_10",
+   "pred": "SELECT MIN(runs) FROM table_26041144_10",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the number of districts for december 1799",
+   "context": "CREATE TABLE table_15572443_1 (district VARCHAR, election_date VARCHAR)",
+   "answer": "SELECT COUNT(district) FROM table_15572443_1 WHERE election_date = \"December 1799\"",
+   "pred": "SELECT COUNT(district) FROM table_15572443_1 WHERE election_date = \"December 1799\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Can you tell me the average Total that has the To par smaller than 10, and the Country of south korea?",
+   "context": "CREATE TABLE table_name_60 (total INTEGER, to_par VARCHAR, country VARCHAR)",
+   "answer": "SELECT AVG(total) FROM table_name_60 WHERE to_par < 10 AND country = \"south korea\"",
+   "pred": "SELECT AVG(total) FROM table_name_60 WHERE to_par < 10 AND country = \"south korea\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "When gordon (27) had high points, what was the number of high assists?",
+   "context": "CREATE TABLE table_11960610_10 (high_assists VARCHAR, high_points VARCHAR)",
+   "answer": "SELECT COUNT(high_assists) FROM table_11960610_10 WHERE high_points = \"Gordon (27)\"",
+   "pred": "SELECT COUNT(high_assists) FROM table_11960610_10 WHERE high_points = \"Gordon (27)\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is last date created of votes from the state 'CA'?",
+   "context": "CREATE TABLE votes (created INTEGER, state VARCHAR)",
+   "answer": "SELECT MAX(created) FROM votes WHERE state = 'CA'",
+   "pred": "SELECT MAX(created) FROM votes WHERE state = 'CA'",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the engine type with a model with base 2.4?",
+   "context": "CREATE TABLE table_name_90 (engine_type VARCHAR, model VARCHAR)",
+   "answer": "SELECT engine_type FROM table_name_90 WHERE model = \"base 2.4\"",
+   "pred": "SELECT engine_type FROM table_name_90 WHERE model = \"base 2.4\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "During runs 332, what was the venue?",
+   "context": "CREATE TABLE table_name_60 (venue VARCHAR, runs VARCHAR)",
+   "answer": "SELECT venue FROM table_name_60 WHERE runs = \"332\"",
+   "pred": "SELECT venue FROM table_name_60 WHERE runs = 332",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the results for institutional authority of paf",
+   "context": "CREATE TABLE table_name_73 (results VARCHAR, institutional_authority VARCHAR)",
+   "answer": "SELECT results FROM table_name_73 WHERE institutional_authority = \"paf\"",
+   "pred": "SELECT results FROM table_name_73 WHERE institutional_authority = \"paf\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the average number of goals for a player who had a Leeds career from 1960\u20131964 and made fewer than 120 appearances?",
+   "context": "CREATE TABLE table_name_68 (goals INTEGER, leeds_career VARCHAR, appearances VARCHAR)",
+   "answer": "SELECT AVG(goals) FROM table_name_68 WHERE leeds_career = \"1960\u20131964\" AND appearances < 120",
+   "pred": "SELECT AVG(goals) FROM table_name_68 WHERE leeds_career = \"1960\u20131964\" AND appearances < 120",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the surface for events held in 1983?",
+   "context": "CREATE TABLE table_2151643_3 (surface VARCHAR, year VARCHAR)",
+   "answer": "SELECT surface FROM table_2151643_3 WHERE year = 1983",
+   "pred": "SELECT surface FROM table_2151643_3 WHERE year = 1983",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who creates the catalog with the number \"cal03 / 0091037137333\"?",
+   "context": "CREATE TABLE table_11222744_3 (studio VARCHAR, catalog_number VARCHAR)",
+   "answer": "SELECT studio FROM table_11222744_3 WHERE catalog_number = \"CAL03 / 0091037137333\"",
+   "pred": "SELECT studio FROM table_11222744_3 WHERE catalog_number = \"Cal03 / 0091037137333\"",
+   "exact": true,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Name the film title for wohin und zur\u00fcck - welcome in vienna",
+   "context": "CREATE TABLE table_16255245_1 (film_title_used_in_nomination VARCHAR, original_title VARCHAR)",
+   "answer": "SELECT film_title_used_in_nomination FROM table_16255245_1 WHERE original_title = \"Wohin und zur\u00fcck - Welcome in Vienna\"",
+   "pred": "SELECT film_title_used_in_nomination FROM table_16255245_1 WHERE original_title = \"Wohin und zur\u00fcck - Welcome in Vienna\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "who is the home team when the away team is rivercity rage?",
+   "context": "CREATE TABLE table_name_91 (home_team VARCHAR, away_team VARCHAR)",
+   "answer": "SELECT home_team FROM table_name_91 WHERE away_team = \"rivercity rage\"",
+   "pred": "SELECT home_team FROM table_name_91 WHERE away_team = \"rivercity rage\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "When the Mole was Petrina Edge, what was the potential prize money?",
+   "context": "CREATE TABLE table_name_70 (potential_prize_money VARCHAR, mole VARCHAR)",
+   "answer": "SELECT potential_prize_money FROM table_name_70 WHERE mole = \"petrina edge\"",
+   "pred": "SELECT potential_prize_money FROM table_name_70 WHERE mole = \"petrina edge\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the league finish for w being 11",
+   "context": "CREATE TABLE table_22962745_12 (league_finish VARCHAR, w VARCHAR)",
+   "answer": "SELECT league_finish FROM table_22962745_12 WHERE w = 11",
+   "pred": "SELECT league_finish FROM table_22962745_12 WHERE w = 11",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What are the slovenian names of the villages that had 16.7% of slovenes in 1991?",
+   "context": "CREATE TABLE table_10797463_1 (village__slovenian_ VARCHAR, percent_of_slovenes_1991 VARCHAR)",
+   "answer": "SELECT village__slovenian_ FROM table_10797463_1 WHERE percent_of_slovenes_1991 = \"16.7%\"",
+   "pred": "SELECT village__slovenian_ FROM table_10797463_1 WHERE percent_of_slovenes_1991 = \"16.7%\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the average losses for 22 goals?",
+   "context": "CREATE TABLE table_name_23 (losses INTEGER, goals_for INTEGER)",
+   "answer": "SELECT AVG(losses) FROM table_name_23 WHERE goals_for > 22",
+   "pred": "SELECT AVG(losses) FROM table_name_23 WHERE goals_for = 22",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "How many times was the player drawn that had less than 12 losses and a goal difference of +20?",
+   "context": "CREATE TABLE table_name_44 (drawn VARCHAR, lost VARCHAR, goal_difference VARCHAR)",
+   "answer": "SELECT drawn FROM table_name_44 WHERE lost < 12 AND goal_difference = \"+20\"",
+   "pred": "SELECT COUNT(drawn) FROM table_name_44 WHERE lost < 12 AND goal_difference = \"+20\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "The score in the final is 2\u20136, 6\u20132, 6\u20130, on what surface?",
+   "context": "CREATE TABLE table_26202847_6 (surface VARCHAR, score_in_the_final VARCHAR)",
+   "answer": "SELECT surface FROM table_26202847_6 WHERE score_in_the_final = \"2\u20136, 6\u20132, 6\u20130\"",
+   "pred": "SELECT surface FROM table_26202847_6 WHERE score_in_the_final = \"2\u20136, 6\u20132, 6\u20130\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Particle has a Rest mass MeV/c 2 of 1383.7\u00b11.0?",
+   "context": "CREATE TABLE table_name_11 (particle VARCHAR, rest_mass_mev___c_2 VARCHAR)",
+   "answer": "SELECT particle FROM table_name_11 WHERE rest_mass_mev___c_2 = \"1383.7\u00b11.0\"",
+   "pred": "SELECT particle FROM table_name_11 WHERE rest_mass_mev___c_2 = \"1383.7\u00b11.0\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the least births for conversion being 26,333",
+   "context": "CREATE TABLE table_28137918_5 (births INTEGER, conversions VARCHAR)",
+   "answer": "SELECT MIN(births) FROM table_28137918_5 WHERE conversions = \"26,333\"",
+   "pred": "SELECT MIN(births) FROM table_28137918_5 WHERE conversions = \"26,333\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the population as of 11-01-2010 for Bayan County?",
+   "context": "CREATE TABLE table_name_50 (population__2010_11_01_ VARCHAR, name VARCHAR)",
+   "answer": "SELECT population__2010_11_01_ FROM table_name_50 WHERE name = \"bayan county\"",
+   "pred": "SELECT population__2010_11_01_ FROM table_name_50 WHERE name = \"bayan county\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the result of the game against the Los Angeles Dons?",
+   "context": "CREATE TABLE table_name_49 (result VARCHAR, opponent VARCHAR)",
+   "answer": "SELECT result FROM table_name_49 WHERE opponent = \"los angeles dons\"",
+   "pred": "SELECT result FROM table_name_49 WHERE opponent = \"los angeles dons\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What launch has a Ship of fearless?",
+   "context": "CREATE TABLE table_name_64 (launched VARCHAR, ship VARCHAR)",
+   "answer": "SELECT launched FROM table_name_64 WHERE ship = \"fearless\"",
+   "pred": "SELECT launched FROM table_name_64 WHERE ship = \"fearless\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Calendar has a WYSIWYG Editor of no, and an Unread message tracking of session, and an Image attachment of no?",
+   "context": "CREATE TABLE table_name_91 (calendar VARCHAR, image_attachment VARCHAR, wysiwyg_editor VARCHAR, unread_message_tracking VARCHAR)",
+   "answer": "SELECT calendar FROM table_name_91 WHERE wysiwyg_editor = \"no\" AND unread_message_tracking = \"session\" AND image_attachment = \"no\"",
+   "pred": "SELECT calendar FROM table_name_91 WHERE wysiwyg_editor = \"no\" AND unread_message_tracking = \"session\" AND image_attachment = \"no\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What character won the best dramatic performance award?",
+   "context": "CREATE TABLE table_name_26 (character VARCHAR, category VARCHAR)",
+   "answer": "SELECT character FROM table_name_26 WHERE category = \"best dramatic performance\"",
+   "pred": "SELECT character FROM table_name_26 WHERE category = \"best dramatic performance award\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "what's the\u00a0regionalliga nord\u00a0with\u00a0regionalliga s\u00fcd\u00a0being 1. fc nuremberg spvgg greuther f\u00fcrth",
+   "context": "CREATE TABLE table_14242137_11 (regionalliga_nord VARCHAR, regionalliga_s\u00fcd VARCHAR)",
+   "answer": "SELECT regionalliga_nord FROM table_14242137_11 WHERE regionalliga_s\u00fcd = \"1. FC Nuremberg SpVgg Greuther F\u00fcrth\"",
+   "pred": "SELECT regionalliga_nord FROM table_14242137_11 WHERE regionalliga_s\u00fcd = \"1. FC Nuremberg Spvgg Greuther F\u00fcrth\"",
+   "exact": true,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What states have a regional page # of 1, 5-7, 9-11, 13-15?",
+   "context": "CREATE TABLE table_287659_2 (state_name VARCHAR, regional_page__number VARCHAR)",
+   "answer": "SELECT state_name FROM table_287659_2 WHERE regional_page__number = \"1, 5-7, 9-11, 13-15\"",
+   "pred": "SELECT state_name FROM table_287659_2 WHERE regional_page__number = \"1, 5-7, 9-11, 13-15\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which date has a Week larger than 5, and an Attendance of 54,803?",
+   "context": "CREATE TABLE table_name_6 (date VARCHAR, week VARCHAR, attendance VARCHAR)",
+   "answer": "SELECT date FROM table_name_6 WHERE week > 5 AND attendance = \"54,803\"",
+   "pred": "SELECT date FROM table_name_6 WHERE week > 5 AND attendance = 54 OFFSET 803",
+   "exact": false,
+   "exec": false,
+   "valid": false
+  },
+  {
+   "question": "What si the total sample size at rasmussen reports when the margin of error was bigger than 4.5?",
+   "context": "CREATE TABLE table_name_59 (sample_size VARCHAR, poll_source VARCHAR, margin_of_error VARCHAR)",
+   "answer": "SELECT COUNT(sample_size) FROM table_name_59 WHERE poll_source = \"rasmussen reports\" AND margin_of_error > 4.5",
+   "pred": "SELECT COUNT(sample_size) FROM table_name_59 WHERE poll_source = \"rasmussen reports\" AND margin_of_error > 4.5",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What outcome has yvonne vermaak as the opponent?",
+   "context": "CREATE TABLE table_name_79 (outcome VARCHAR, opponent VARCHAR)",
+   "answer": "SELECT outcome FROM table_name_79 WHERE opponent = \"yvonne vermaak\"",
+   "pred": "SELECT outcome FROM table_name_79 WHERE opponent = \"yvonne vermaak\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How much Loss has a Gain smaller than 1571, and a Long smaller than 47, and an Avg/G of 36.4?",
+   "context": "CREATE TABLE table_name_27 (loss VARCHAR, avg_g VARCHAR, gain VARCHAR, long VARCHAR)",
+   "answer": "SELECT COUNT(loss) FROM table_name_27 WHERE gain < 1571 AND long < 47 AND avg_g = 36.4",
+   "pred": "SELECT COUNT(loss) FROM table_name_27 WHERE gain < 1571 AND long < 47 AND avg_g = 36.4",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What year did the rank of 31 happen in?",
+   "context": "CREATE TABLE table_name_75 (year VARCHAR, rank VARCHAR)",
+   "answer": "SELECT year FROM table_name_75 WHERE rank = \"31\"",
+   "pred": "SELECT year FROM table_name_75 WHERE rank = \"31\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the listed Tonnage that has U-boats destroyed (KuK) of 2 and Ships sunk (Pola) of (not recorded)?",
+   "context": "CREATE TABLE table_name_54 (tonnage VARCHAR, u_boats_destroyed__kuk_ VARCHAR, ships_sunk__pola_ VARCHAR)",
+   "answer": "SELECT tonnage FROM table_name_54 WHERE u_boats_destroyed__kuk_ = \"2\" AND ships_sunk__pola_ = \"(not recorded)\"",
+   "pred": "SELECT COUNT(tonnage) FROM table_name_54 WHERE u_boats_destroyed__kuk_ = 2 AND ships_sunk__pola_ = \"(not recorded)\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "if they played last on 12/5/1987 what is their record",
+   "context": "CREATE TABLE table_15740666_6 (current_streak VARCHAR, last_meeting VARCHAR)",
+   "answer": "SELECT current_streak FROM table_15740666_6 WHERE last_meeting = \"12/5/1987\"",
+   "pred": "SELECT current_streak FROM table_15740666_6 WHERE last_meeting = \"12/5/1987\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the venue for batting partners Mahela Jayawardene and Prasanna Jayawardene",
+   "context": "CREATE TABLE table_1670921_1 (venue VARCHAR, batting_partners VARCHAR)",
+   "answer": "SELECT venue FROM table_1670921_1 WHERE batting_partners = \"Mahela Jayawardene and Prasanna Jayawardene\"",
+   "pred": "SELECT venue FROM table_1670921_1 WHERE batting_partners = \"Mahela Jayawardene and Prasanna Jayawardene\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the flag for Terkoeli?",
+   "context": "CREATE TABLE table_name_52 (flag VARCHAR, name VARCHAR)",
+   "answer": "SELECT flag FROM table_name_52 WHERE name = \"terkoeli\"",
+   "pred": "SELECT flag FROM table_name_52 WHERE name = \"terkoeli\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the location when founded was 1957?",
+   "context": "CREATE TABLE table_24195232_1 (location VARCHAR, founded VARCHAR)",
+   "answer": "SELECT location FROM table_24195232_1 WHERE founded = 1957",
+   "pred": "SELECT location FROM table_24195232_1 WHERE founded = \"1957\"",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "how many parks are name beltzville state park?",
+   "context": "CREATE TABLE table_name_77 (date_founded VARCHAR, park_name VARCHAR)",
+   "answer": "SELECT COUNT(date_founded) FROM table_name_77 WHERE park_name = \"beltzville state park\"",
+   "pred": "SELECT COUNT(date_founded) FROM table_name_77 WHERE park_name = \"beltzville state park\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What amount of earnings does Tiger Woods have?",
+   "context": "CREATE TABLE table_name_40 (earnings___$__ VARCHAR, player VARCHAR)",
+   "answer": "SELECT earnings___$__ FROM table_name_40 WHERE player = \"tiger woods\"",
+   "pred": "SELECT earnings___$__ FROM table_name_40 WHERE player = \"tiger woods\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the to par for the 69-70-72=211 score?",
+   "context": "CREATE TABLE table_name_56 (to_par VARCHAR, score VARCHAR)",
+   "answer": "SELECT to_par FROM table_name_56 WHERE score = 69 - 70 - 72 = 211",
+   "pred": "SELECT to_par FROM table_name_56 WHERE score = 69 - 70 - 72 = 211",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the average number of goals for entries with more than 12 losses, more than 10 wins, more than 3 draws, and fewer than 29 points?",
+   "context": "CREATE TABLE table_name_99 (goals_for INTEGER, draws VARCHAR, points VARCHAR, losses VARCHAR, wins VARCHAR)",
+   "answer": "SELECT AVG(goals_for) FROM table_name_99 WHERE losses > 12 AND wins > 10 AND points < 29 AND draws > 3",
+   "pred": "SELECT AVG(goals_for) FROM table_name_99 WHERE losses > 12 AND wins > 10 AND draws > 3 AND points < 29",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What are the dates of the outgoing manager colin hendry does appointments? ",
+   "context": "CREATE TABLE table_11207040_6 (date_of_appointment VARCHAR, outgoing_manager VARCHAR)",
+   "answer": "SELECT date_of_appointment FROM table_11207040_6 WHERE outgoing_manager = \"Colin Hendry\"",
+   "pred": "SELECT date_of_appointment FROM table_11207040_6 WHERE outgoing_manager = \"Colin Hendry\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the earliest years any of the incumbents were first elected? ",
+   "context": "CREATE TABLE table_1342249_5 (first_elected INTEGER)",
+   "answer": "SELECT MIN(first_elected) FROM table_1342249_5",
+   "pred": "SELECT MIN(first_elected) FROM table_1342249_5",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "what is the earliest year with the best finish t-65?",
+   "context": "CREATE TABLE table_name_82 (year INTEGER, best_finish VARCHAR)",
+   "answer": "SELECT MIN(year) FROM table_name_82 WHERE best_finish = \"t-65\"",
+   "pred": "SELECT MIN(year) FROM table_name_82 WHERE best_finish = \"t-65\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the game site with result of w 20-14",
+   "context": "CREATE TABLE table_name_88 (game_site VARCHAR, result VARCHAR)",
+   "answer": "SELECT game_site FROM table_name_88 WHERE result = \"w 20-14\"",
+   "pred": "SELECT game_site FROM table_name_88 WHERE result = \"w 20-14\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the Crowd for the Venue of Princes Park?",
+   "context": "CREATE TABLE table_name_88 (crowd VARCHAR, venue VARCHAR)",
+   "answer": "SELECT crowd FROM table_name_88 WHERE venue = \"princes park\"",
+   "pred": "SELECT COUNT(crowd) FROM table_name_88 WHERE venue = \"princes park\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "How many games have been played when there are 13 wins and 45 goals were conceded?",
+   "context": "CREATE TABLE table_name_58 (games_played VARCHAR, wins VARCHAR, goals_conceded VARCHAR)",
+   "answer": "SELECT games_played FROM table_name_58 WHERE wins = 13 AND goals_conceded = 45",
+   "pred": "SELECT games_played FROM table_name_58 WHERE wins = 13 AND goals_conceded = 45",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Among all the claims, which claims have a claimed amount larger than the average? List the date the claim was made and the date it was settled.",
+   "context": "CREATE TABLE Claims (Date_Claim_Made VARCHAR, Date_Claim_Settled VARCHAR, Amount_Claimed INTEGER)",
+   "answer": "SELECT Date_Claim_Made, Date_Claim_Settled FROM Claims WHERE Amount_Claimed > (SELECT AVG(Amount_Claimed) FROM Claims)",
+   "pred": "SELECT Date_Claim_Made, Date_Claim_Settled FROM Claims GROUP BY Date_Claim_Made HAVING AVG(Amount_Claimed) > 0",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Jos verstappen jeroen bleekemolen is on Imp2 winning team where all are rnd.",
+   "context": "CREATE TABLE table_14154271_2 (rnd VARCHAR, lmp2_winning_team VARCHAR)",
+   "answer": "SELECT rnd FROM table_14154271_2 WHERE lmp2_winning_team = \"Jos Verstappen Jeroen Bleekemolen\"",
+   "pred": "SELECT rnd FROM table_14154271_2 WHERE lmp2_winning_team = \"Jeroen Bleekemolen\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What is the Home team with an Away team that is oxford united?",
+   "context": "CREATE TABLE table_name_87 (home_team VARCHAR, away_team VARCHAR)",
+   "answer": "SELECT home_team FROM table_name_87 WHERE away_team = \"oxford united\"",
+   "pred": "SELECT home_team FROM table_name_87 WHERE away_team = \"oxford united\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What year is the death for a birth of 1873 and higher than rank 28?",
+   "context": "CREATE TABLE table_name_74 (death VARCHAR, birth VARCHAR, rank VARCHAR)",
+   "answer": "SELECT death FROM table_name_74 WHERE birth = 1873 AND rank > 28",
+   "pred": "SELECT death FROM table_name_74 WHERE birth = 1873 AND rank > 28",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Name the driver passenger for position 4",
+   "context": "CREATE TABLE table_16729457_17 (driver___passenger VARCHAR, position VARCHAR)",
+   "answer": "SELECT driver___passenger FROM table_16729457_17 WHERE position = 4",
+   "pred": "SELECT driver___passenger FROM table_16729457_17 WHERE position = 4",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the year of the TV series directed by Soroush Sehat?",
+   "context": "CREATE TABLE table_name_1 (year VARCHAR, director VARCHAR)",
+   "answer": "SELECT year FROM table_name_1 WHERE director = \"soroush sehat\"",
+   "pred": "SELECT year FROM table_name_1 WHERE director = \"soroush sehat\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the price (usd) for the model pq32mu?",
+   "context": "CREATE TABLE table_29778616_1 (price__usd_ INTEGER, model VARCHAR)",
+   "answer": "SELECT MIN(price__usd_) FROM table_29778616_1 WHERE model = \"PQ32MU\"",
+   "pred": "SELECT MAX(price__usd_) FROM table_29778616_1 WHERE model = \"PQ32MU\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What was the attendance during the november 16, 1975 game?",
+   "context": "CREATE TABLE table_name_18 (attendance INTEGER, date VARCHAR)",
+   "answer": "SELECT MAX(attendance) FROM table_name_18 WHERE date = \"november 16, 1975\"",
+   "pred": "SELECT AVG(attendance) FROM table_name_18 WHERE date = \"november 16, 1975\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What is the English title for 1984 from Sweden?",
+   "context": "CREATE TABLE table_name_68 (english_title VARCHAR, year VARCHAR, country VARCHAR)",
+   "answer": "SELECT english_title FROM table_name_68 WHERE year = 1984 AND country = \"sweden\"",
+   "pred": "SELECT english_title FROM table_name_68 WHERE year = 1984 AND country = \"sweden\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which state is University of Tennessee based in?",
+   "context": "CREATE TABLE table_name_27 (state VARCHAR, host VARCHAR)",
+   "answer": "SELECT state FROM table_name_27 WHERE host = \"university of tennessee\"",
+   "pred": "SELECT state FROM table_name_27 WHERE host = \"university of tennessee\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Find the last name of female (sex is F) students in the descending order of age.",
+   "context": "CREATE TABLE STUDENT (LName VARCHAR, Sex VARCHAR, Age VARCHAR)",
+   "answer": "SELECT LName FROM STUDENT WHERE Sex = \"F\" ORDER BY Age DESC",
+   "pred": "SELECT LName FROM STUDENT WHERE Sex = \"F\" ORDER BY Age DESC",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "On what date was the Transitions Championship?",
+   "context": "CREATE TABLE table_name_46 (date VARCHAR, tournament VARCHAR)",
+   "answer": "SELECT date FROM table_name_46 WHERE tournament = \"transitions championship\"",
+   "pred": "SELECT date FROM table_name_46 WHERE tournament = \"transitions championship\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many different starts had an average finish of 17.9?",
+   "context": "CREATE TABLE table_2622469_1 (starts VARCHAR, avg_finish VARCHAR)",
+   "answer": "SELECT COUNT(starts) FROM table_2622469_1 WHERE avg_finish = \"17.9\"",
+   "pred": "SELECT COUNT(starts) FROM table_2622469_1 WHERE avg_finish = \"17.9\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the winning time in the year when the odds of the winner were 2.94?",
+   "context": "CREATE TABLE table_21676617_1 (winning_time__km_rate_ VARCHAR, odds_of_winner VARCHAR)",
+   "answer": "SELECT winning_time__km_rate_ FROM table_21676617_1 WHERE odds_of_winner = \"2.94\"",
+   "pred": "SELECT winning_time__km_rate_ FROM table_21676617_1 WHERE odds_of_winner = \"2.94\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which competition took place in Bangkok?",
+   "context": "CREATE TABLE table_name_94 (competition VARCHAR, venue VARCHAR)",
+   "answer": "SELECT competition FROM table_name_94 WHERE venue = \"bangkok\"",
+   "pred": "SELECT competition FROM table_name_94 WHERE venue = \"bangkok\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the stadium of melbourne?",
+   "context": "CREATE TABLE table_name_40 (venue VARCHAR, home_team VARCHAR)",
+   "answer": "SELECT venue FROM table_name_40 WHERE home_team = \"melbourne\"",
+   "pred": "SELECT venue FROM table_name_40 WHERE home_team = \"melbourne\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the attendance on May 26?",
+   "context": "CREATE TABLE table_name_86 (attendance VARCHAR, date VARCHAR)",
+   "answer": "SELECT attendance FROM table_name_86 WHERE date = \"may 26\"",
+   "pred": "SELECT attendance FROM table_name_86 WHERE date = \"may 26\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Terminus is on line 10?",
+   "context": "CREATE TABLE table_name_1 (terminus VARCHAR, line VARCHAR)",
+   "answer": "SELECT terminus FROM table_name_1 WHERE line = \"line 10\"",
+   "pred": "SELECT terminus FROM table_name_1 WHERE line = 10",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What is the score for the home team for the venue glenferrie oval?",
+   "context": "CREATE TABLE table_name_57 (home_team VARCHAR, venue VARCHAR)",
+   "answer": "SELECT home_team AS score FROM table_name_57 WHERE venue = \"glenferrie oval\"",
+   "pred": "SELECT home_team AS score FROM table_name_57 WHERE venue = \"glenferrie oval\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many dfb-pokal did kevin-prince boateng have?",
+   "context": "CREATE TABLE table_22167196_1 (dfb_pokal VARCHAR, player VARCHAR)",
+   "answer": "SELECT COUNT(dfb_pokal) FROM table_22167196_1 WHERE player = \"Kevin-Prince Boateng\"",
+   "pred": "SELECT COUNT(dfb_pokal) FROM table_22167196_1 WHERE player = \"Kevin Prince Boateng\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What tournament was located in Colorado?",
+   "context": "CREATE TABLE table_name_5 (tournament VARCHAR, location VARCHAR)",
+   "answer": "SELECT tournament FROM table_name_5 WHERE location = \"colorado\"",
+   "pred": "SELECT tournament FROM table_name_5 WHERE location = \"colorado\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What's the total losses that has more than 12 wins and 1017 against?",
+   "context": "CREATE TABLE table_name_42 (losses VARCHAR, against VARCHAR, wins VARCHAR)",
+   "answer": "SELECT COUNT(losses) FROM table_name_42 WHERE against = 1017 AND wins > 12",
+   "pred": "SELECT COUNT(losses) FROM table_name_42 WHERE against > 12 AND wins > 1017",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What was the Stage when Pascal Richard had the Mountains classification and Vladimir Poulnikov won?",
+   "context": "CREATE TABLE table_name_71 (stage VARCHAR, mountains_classification VARCHAR, winner VARCHAR)",
+   "answer": "SELECT stage FROM table_name_71 WHERE mountains_classification = \"pascal richard\" AND winner = \"vladimir poulnikov\"",
+   "pred": "SELECT stage FROM table_name_71 WHERE mountains_classification = \"pascal richard\" AND winner = \"vladimir poulnikov\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the average number of rounds for winner Rafael Cavalcante?",
+   "context": "CREATE TABLE table_name_37 (round INTEGER, winner VARCHAR)",
+   "answer": "SELECT AVG(round) FROM table_name_37 WHERE winner = \"rafael cavalcante\"",
+   "pred": "SELECT AVG(round) FROM table_name_37 WHERE winner = \"rafael cavalcante\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Surface has a Week of march 1?",
+   "context": "CREATE TABLE table_name_95 (surface VARCHAR, week VARCHAR)",
+   "answer": "SELECT surface FROM table_name_95 WHERE week = \"march 1\"",
+   "pred": "SELECT surface FROM table_name_95 WHERE week = \"march 1\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "When was there a bye result?",
+   "context": "CREATE TABLE table_name_32 (date VARCHAR, result VARCHAR)",
+   "answer": "SELECT date FROM table_name_32 WHERE result = \"bye\"",
+   "pred": "SELECT date FROM table_name_32 WHERE result = \"bye\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Where were the wrestlers born who debuted in 2002-7?",
+   "context": "CREATE TABLE table_1557974_1 (birthplace VARCHAR, debut VARCHAR)",
+   "answer": "SELECT birthplace FROM table_1557974_1 WHERE debut = \"2002-7\"",
+   "pred": "SELECT birthplace FROM table_1557974_1 WHERE debut = \"2002-7\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is Conference Titles, when Win % is .667?",
+   "context": "CREATE TABLE table_name_23 (conference_titles VARCHAR, win__percentage VARCHAR)",
+   "answer": "SELECT conference_titles FROM table_name_23 WHERE win__percentage = \".667\"",
+   "pred": "SELECT conference_titles FROM table_name_23 WHERE win__percentage = \"667\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "what is the most lost games when the percentage is 50.00% and games played is less than 2?",
+   "context": "CREATE TABLE table_name_95 (lost INTEGER, percentage VARCHAR, played VARCHAR)",
+   "answer": "SELECT MAX(lost) FROM table_name_95 WHERE percentage = \"50.00%\" AND played < 2",
+   "pred": "SELECT MAX(lost) FROM table_name_95 WHERE percentage = \"50.00%\" AND played < 2",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which City has a Score smaller than 30, and a Venue of aigburth?",
+   "context": "CREATE TABLE table_name_85 (city VARCHAR, score VARCHAR, venue VARCHAR)",
+   "answer": "SELECT city FROM table_name_85 WHERE score < 30 AND venue = \"aigburth\"",
+   "pred": "SELECT city FROM table_name_85 WHERE score < 30 AND venue = \"aigburth\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the the name of the winner or 2nd  with a weight more than 7.3, and the result was \u2013?",
+   "context": "CREATE TABLE table_name_41 (winner_or_2nd VARCHAR, weight VARCHAR, result VARCHAR)",
+   "answer": "SELECT winner_or_2nd FROM table_name_41 WHERE weight > 7.3 AND result = \"\u2013\"",
+   "pred": "SELECT winner_or_2nd FROM table_name_41 WHERE weight > 7.3 AND result = \"\u2013\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who had the high rebounds when the score was l 85\u2013102 (ot)?",
+   "context": "CREATE TABLE table_name_55 (high_rebounds VARCHAR, score VARCHAR)",
+   "answer": "SELECT high_rebounds FROM table_name_55 WHERE score = \"l 85\u2013102 (ot)\"",
+   "pred": "SELECT high_rebounds FROM table_name_55 WHERE score = \"l 85\u2013102 (ot)\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the earliest issue Arnie Kogen wrote for in December 1964?",
+   "context": "CREATE TABLE table_name_12 (issue INTEGER, writer VARCHAR, date VARCHAR)",
+   "answer": "SELECT MIN(issue) FROM table_name_12 WHERE writer = \"arnie kogen\" AND date = \"december 1964\"",
+   "pred": "SELECT MIN(issue) FROM table_name_12 WHERE writer = \"arnie kogen\" AND date = \"december 1964\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is Points, when Points is 60, and when Club is Bedwas RFC?",
+   "context": "CREATE TABLE table_name_24 (points_for VARCHAR, points VARCHAR, club VARCHAR)",
+   "answer": "SELECT points_for FROM table_name_24 WHERE points = \"60\" AND club = \"bedwas rfc\"",
+   "pred": "SELECT points_for FROM table_name_24 WHERE points = 60 AND club = \"bedwas rfc\"",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the to par of canada?",
+   "context": "CREATE TABLE table_name_65 (to_par VARCHAR, country VARCHAR)",
+   "answer": "SELECT to_par FROM table_name_65 WHERE country = \"canada\"",
+   "pred": "SELECT to_par FROM table_name_65 WHERE country = \"canada\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many different payment methods are there?",
+   "context": "CREATE TABLE customers (payment_method VARCHAR)",
+   "answer": "SELECT COUNT(DISTINCT payment_method) FROM customers",
+   "pred": "SELECT COUNT(DISTINCT payment_method) FROM customers",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "When did the 113 episode air?",
+   "context": "CREATE TABLE table_10718631_2 (original_air_date VARCHAR, no_in_series VARCHAR)",
+   "answer": "SELECT original_air_date FROM table_10718631_2 WHERE no_in_series = 113",
+   "pred": "SELECT original_air_date FROM table_10718631_2 WHERE no_in_series = \"113\"",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who owns the station with the frequency FM 92.1?",
+   "context": "CREATE TABLE table_name_65 (owner VARCHAR, frequency VARCHAR)",
+   "answer": "SELECT owner FROM table_name_65 WHERE frequency = \"fm 92.1\"",
+   "pred": "SELECT owner FROM table_name_65 WHERE frequency = \"fm 92.1\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the film title and inventory id of the item in the inventory which was rented most frequently?",
+   "context": "CREATE TABLE film (title VARCHAR, film_id VARCHAR); CREATE TABLE inventory (inventory_id VARCHAR, film_id VARCHAR); CREATE TABLE rental (inventory_id VARCHAR)",
+   "answer": "SELECT T1.title, T2.inventory_id FROM film AS T1 JOIN inventory AS T2 ON T1.film_id = T2.film_id JOIN rental AS T3 ON T2.inventory_id = T3.inventory_id GROUP BY T2.inventory_id ORDER BY COUNT(*) DESC LIMIT 1",
+   "pred": "SELECT T1.title, T1.inventory_id FROM inventory AS T1 JOIN rental AS T2 ON T1.inventory_id = T2.inventory_id GROUP BY T1.inventory_id ORDER BY COUNT(*) DESC LIMIT 1",
+   "exact": false,
+   "exec": false,
+   "valid": false
+  },
+  {
+   "question": "What was the attendance when the VFL played Lake Oval?",
+   "context": "CREATE TABLE table_name_44 (crowd VARCHAR, venue VARCHAR)",
+   "answer": "SELECT COUNT(crowd) FROM table_name_44 WHERE venue = \"lake oval\"",
+   "pred": "SELECT COUNT(crowd) FROM table_name_44 WHERE venue = \"lake oval\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Show the authors who have submissions to more than one workshop.",
+   "context": "CREATE TABLE submission (Author VARCHAR, Submission_ID VARCHAR); CREATE TABLE acceptance (Submission_ID VARCHAR, workshop_id VARCHAR)",
+   "answer": "SELECT T2.Author FROM acceptance AS T1 JOIN submission AS T2 ON T1.Submission_ID = T2.Submission_ID GROUP BY T2.Author HAVING COUNT(DISTINCT T1.workshop_id) > 1",
+   "pred": "SELECT DISTINCT T1.Author FROM submission AS T1 JOIN acceptance AS T2 ON T1.Submission_ID = T2.Submission_ID GROUP BY T1.Author HAVING COUNT(*) > 1",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is Agg., when Team 1 is CD El\u00e1 Nguema?",
+   "context": "CREATE TABLE table_name_63 (agg VARCHAR, team_1 VARCHAR)",
+   "answer": "SELECT agg FROM table_name_63 WHERE team_1 = \"cd el\u00e1 nguema\"",
+   "pred": "SELECT agg FROM table_name_63 WHERE team_1 = \"cd el\u00e1 nguema\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the score of player darren clarke, who has $112,500?",
+   "context": "CREATE TABLE table_name_72 (score VARCHAR, money___$__ VARCHAR, player VARCHAR)",
+   "answer": "SELECT score FROM table_name_72 WHERE money___$__ = \"112,500\" AND player = \"darren clarke\"",
+   "pred": "SELECT score FROM table_name_72 WHERE money___$__ = \"$112,500\" AND player = \"darren clarke\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Tell me the games for men's 5000 metres",
+   "context": "CREATE TABLE table_name_18 (games VARCHAR, event VARCHAR)",
+   "answer": "SELECT games FROM table_name_18 WHERE event = \"men's 5000 metres\"",
+   "pred": "SELECT games FROM table_name_18 WHERE event = \"men's 5000 metres\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What year was the USS Cambridge laid down?",
+   "context": "CREATE TABLE table_name_17 (laid_down VARCHAR, name VARCHAR)",
+   "answer": "SELECT laid_down FROM table_name_17 WHERE name = \"uss cambridge\"",
+   "pred": "SELECT laid_down FROM table_name_17 WHERE name = \"usss cambridge\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What is the album number for the record \u60c5\u6b4c\u6ca1\u6709\u544a\u8bc9\u4f60, simplified from the traditional Chinese name?",
+   "context": "CREATE TABLE table_name_66 (album_number VARCHAR, chinese__simplified_ VARCHAR)",
+   "answer": "SELECT album_number FROM table_name_66 WHERE chinese__simplified_ = \"\u60c5\u6b4c\u6ca1\u6709\u544a\u8bc9\u4f60\"",
+   "pred": "SELECT album_number FROM table_name_66 WHERE chinese__simplified_ = \"\u60c5\u6b4c\u6ca1\u6709\u544a\u8bc9\u4f60, simplified\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Who was the leading scorer on 9 January 2008?",
+   "context": "CREATE TABLE table_name_99 (leading_scorer VARCHAR, date VARCHAR)",
+   "answer": "SELECT leading_scorer FROM table_name_99 WHERE date = \"9 january 2008\"",
+   "pred": "SELECT leading_scorer FROM table_name_99 WHERE date = \"9 january 2008\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which club has Jamie Korab as Lead?",
+   "context": "CREATE TABLE table_name_69 (club VARCHAR, lead VARCHAR)",
+   "answer": "SELECT club FROM table_name_69 WHERE lead = \"jamie korab\"",
+   "pred": "SELECT club FROM table_name_69 WHERE lead = \"jamie korab\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was team number 2's Fluminense's 2nd leg?",
+   "context": "CREATE TABLE table_24426072_1 (team__number2 VARCHAR)",
+   "answer": "SELECT 2 AS nd_leg FROM table_24426072_1 WHERE team__number2 = \"Fluminense\"",
+   "pred": "SELECT Fluminense AS 2nd_leg FROM table_24426072_1 WHERE team__number2 = \"Fluminense\"",
+   "exact": false,
+   "exec": false,
+   "valid": false
+  },
+  {
+   "question": "Tell me the surface for eastbourne 14 june 1999",
+   "context": "CREATE TABLE table_name_6 (surface VARCHAR, tournament VARCHAR, date VARCHAR)",
+   "answer": "SELECT surface FROM table_name_6 WHERE tournament = \"eastbourne\" AND date = \"14 june 1999\"",
+   "pred": "SELECT surface FROM table_name_6 WHERE tournament = \"eastbourne 14 june 1999\" AND date = \"eastbourne 14 june 1999\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What was the competition held in 2003?",
+   "context": "CREATE TABLE table_name_17 (competition VARCHAR, year VARCHAR)",
+   "answer": "SELECT competition FROM table_name_17 WHERE year = 2003",
+   "pred": "SELECT competition FROM table_name_17 WHERE year = 2003",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What country has a 70-73-70=213 score?",
+   "context": "CREATE TABLE table_name_62 (country VARCHAR, score VARCHAR)",
+   "answer": "SELECT country FROM table_name_62 WHERE score = 70 - 73 - 70 = 213",
+   "pred": "SELECT country FROM table_name_62 WHERE score = 70 - 73 - 70 = 213",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the number of the game that was played on January 19?",
+   "context": "CREATE TABLE table_17288845_7 (game INTEGER, date VARCHAR)",
+   "answer": "SELECT MAX(game) FROM table_17288845_7 WHERE date = \"January 19\"",
+   "pred": "SELECT MAX(game) FROM table_17288845_7 WHERE date = \"January 19\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How high is the Goldin Finance 117 building currently being build in China?",
+   "context": "CREATE TABLE table_name_4 (pinnacle_height_planned VARCHAR, country VARCHAR, name VARCHAR)",
+   "answer": "SELECT pinnacle_height_planned FROM table_name_4 WHERE country = \"china\" AND name = \"goldin finance 117\"",
+   "pred": "SELECT pinnacle_height_planned FROM table_name_4 WHERE country = \"china\" AND name = \"goldin finance 117\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the total number of cuts made when the events are more than 3?",
+   "context": "CREATE TABLE table_name_47 (cuts_made VARCHAR, events INTEGER)",
+   "answer": "SELECT COUNT(cuts_made) FROM table_name_47 WHERE events > 3",
+   "pred": "SELECT COUNT(cuts_made) FROM table_name_47 WHERE events > 3",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who won the Men's Doubles when Guo Xin won the Women's Singles?",
+   "context": "CREATE TABLE table_12164707_1 (mens_doubles VARCHAR, womens_singles VARCHAR)",
+   "answer": "SELECT mens_doubles FROM table_12164707_1 WHERE womens_singles = \"Guo Xin\"",
+   "pred": "SELECT mens_doubles FROM table_12164707_1 WHERE womens_singles = \"Guo Xin\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Where is Adam Gilchrist from?",
+   "context": "CREATE TABLE table_11303072_9 (nationality VARCHAR, player VARCHAR)",
+   "answer": "SELECT nationality FROM table_11303072_9 WHERE player = \"Adam Gilchrist\"",
+   "pred": "SELECT nationality FROM table_11303072_9 WHERE player = \"Adam Gilchrist\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the region 1 where region 4 is tba is the complete eighth series?",
+   "context": "CREATE TABLE table_1337525_1 (region_1 VARCHAR, region_4 VARCHAR, complete_series VARCHAR)",
+   "answer": "SELECT region_1 FROM table_1337525_1 WHERE region_4 = \"TBA\" AND complete_series = \"The Complete Eighth Series\"",
+   "pred": "SELECT region_1 FROM table_1337525_1 WHERE region_4 = \"TBA\" AND complete_series = \"Eighth\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Tell me the name for round of 1",
+   "context": "CREATE TABLE table_name_33 (name VARCHAR, round VARCHAR)",
+   "answer": "SELECT name FROM table_name_33 WHERE round = 1",
+   "pred": "SELECT name FROM table_name_33 WHERE round = 1",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who wrote the series number 49 with a season larger than 4?",
+   "context": "CREATE TABLE table_name_27 (written_by VARCHAR, season_no VARCHAR, series_no VARCHAR)",
+   "answer": "SELECT written_by FROM table_name_27 WHERE season_no > 4 AND series_no = 49",
+   "pred": "SELECT written_by FROM table_name_27 WHERE season_no > 4 AND series_no = 49",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What's the number of starts in the year with 19.3 average finish?",
+   "context": "CREATE TABLE table_1909647_2 (starts INTEGER, avg_finish VARCHAR)",
+   "answer": "SELECT MIN(starts) FROM table_1909647_2 WHERE avg_finish = \"19.3\"",
+   "pred": "SELECT AVG(starts) FROM table_1909647_2 WHERE avg_finish = \"19.3\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "Name the least attendance for l 36\u20131",
+   "context": "CREATE TABLE table_24126518_2 (attendance INTEGER, final_score VARCHAR)",
+   "answer": "SELECT MIN(attendance) FROM table_24126518_2 WHERE final_score = \"L 36\u20131\"",
+   "pred": "SELECT MIN(attendance) FROM table_24126518_2 WHERE final_score = \"L 36\u20131\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What's the result of the game against Bye?",
+   "context": "CREATE TABLE table_name_34 (result VARCHAR, opponent VARCHAR)",
+   "answer": "SELECT result FROM table_name_34 WHERE opponent = \"bye\"",
+   "pred": "SELECT result FROM table_name_34 WHERE opponent = \"bye\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the name of the leading scorer when the record was 9\u20136?",
+   "context": "CREATE TABLE table_name_18 (leading_scorer VARCHAR, record VARCHAR)",
+   "answer": "SELECT leading_scorer FROM table_name_18 WHERE record = \"9\u20136\"",
+   "pred": "SELECT leading_scorer FROM table_name_18 WHERE record = \"9\u20136\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Player has a Position of forward?",
+   "context": "CREATE TABLE table_name_18 (player VARCHAR, position VARCHAR)",
+   "answer": "SELECT player FROM table_name_18 WHERE position = \"forward\"",
+   "pred": "SELECT player FROM table_name_18 WHERE position = \"forward\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "what is the state when the peak population (year) is 134995 (1950)?",
+   "context": "CREATE TABLE table_name_33 (state VARCHAR, peak_population__year_ VARCHAR)",
+   "answer": "SELECT state FROM table_name_33 WHERE peak_population__year_ = \"134995 (1950)\"",
+   "pred": "SELECT state FROM table_name_33 WHERE peak_population__year_ = \"134995 (1950)\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Who is the opposition when the score is 37 - 28?",
+   "context": "CREATE TABLE table_26847237_3 (opposition VARCHAR, score VARCHAR)",
+   "answer": "SELECT opposition FROM table_26847237_3 WHERE score = \"37 - 28\"",
+   "pred": "SELECT opposition FROM table_26847237_3 WHERE score = \"37 - 28\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the 2007 Team with player Deshaun Foster?",
+   "context": "CREATE TABLE table_name_30 (player VARCHAR)",
+   "answer": "SELECT 2007 AS _team FROM table_name_30 WHERE player = \"deshaun foster\"",
+   "pred": "SELECT 2007 AS _team FROM table_name_30 WHERE player = \"deshaun foster\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many were penanced when the number with known sentences was 71 (1600\u20131773)?",
+   "context": "CREATE TABLE table_name_3 (penanced VARCHAR, number_of_autos_da_f\u00e9_with_known_sentences VARCHAR)",
+   "answer": "SELECT penanced FROM table_name_3 WHERE number_of_autos_da_f\u00e9_with_known_sentences = \"71 (1600\u20131773)\"",
+   "pred": "SELECT penanced FROM table_name_3 WHERE number_of_autos_da_f\u00e9_with_known_sentences = \"71 (1600\u20131773)\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the largest copa sudamericana number when the others number is less than 0?",
+   "context": "CREATE TABLE table_name_80 (copa_sudamericana INTEGER, others INTEGER)",
+   "answer": "SELECT MAX(copa_sudamericana) FROM table_name_80 WHERE others < 0",
+   "pred": "SELECT MAX(copa_sudamericana) FROM table_name_80 WHERE others < 0",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "what is the event when the opponent is yuji hisamatsu?",
+   "context": "CREATE TABLE table_name_9 (event VARCHAR, opponent VARCHAR)",
+   "answer": "SELECT event FROM table_name_9 WHERE opponent = \"yuji hisamatsu\"",
+   "pred": "SELECT event FROM table_name_9 WHERE opponent = \"yuji hisamatsu\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Show all majors and corresponding number of students.",
+   "context": "CREATE TABLE Student (major VARCHAR)",
+   "answer": "SELECT major, COUNT(*) FROM Student GROUP BY major",
+   "pred": "SELECT major, COUNT(*) FROM Student GROUP BY major",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Show the starting years shared by technicians from team \"CLE\" and \"CWS\".",
+   "context": "CREATE TABLE technician (Starting_Year VARCHAR, Team VARCHAR)",
+   "answer": "SELECT Starting_Year FROM technician WHERE Team = \"CLE\" INTERSECT SELECT Starting_Year FROM technician WHERE Team = \"CWS\"",
+   "pred": "SELECT Starting_Year FROM technician WHERE Team = \"CLE\" INTERSECT SELECT Starting_Year FROM technician WHERE Team = \"CWS\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "Which Latitude has a Year named smaller than 1997, and a Name of aino planitia?",
+   "context": "CREATE TABLE table_name_79 (latitude VARCHAR, year_named VARCHAR, name VARCHAR)",
+   "answer": "SELECT latitude FROM table_name_79 WHERE year_named < 1997 AND name = \"aino planitia\"",
+   "pred": "SELECT latitude FROM table_name_79 WHERE year_named < 1997 AND name = \"aino planitia\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What was the crowd size at the moorabbin oval venue?",
+   "context": "CREATE TABLE table_name_86 (crowd VARCHAR, venue VARCHAR)",
+   "answer": "SELECT COUNT(crowd) FROM table_name_86 WHERE venue = \"moorabbin oval\"",
+   "pred": "SELECT COUNT(crowd) FROM table_name_86 WHERE venue = \"moorabbin oval\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How many tries did the player Paul Sykes take when he earned 0 points?",
+   "context": "CREATE TABLE table_name_49 (tries INTEGER, player VARCHAR, points VARCHAR)",
+   "answer": "SELECT MAX(tries) FROM table_name_49 WHERE player = \"paul sykes\" AND points > 0",
+   "pred": "SELECT SUM(tries) FROM table_name_49 WHERE player = \"paul sykes\" AND points = 0",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "How many were in attendance of the game with l 26-21 result?",
+   "context": "CREATE TABLE table_name_28 (attendance VARCHAR, result VARCHAR)",
+   "answer": "SELECT attendance FROM table_name_28 WHERE result = \"l 26-21\"",
+   "pred": "SELECT COUNT(attendance) FROM table_name_28 WHERE result = \"l 26-21\"",
+   "exact": false,
+   "exec": false,
+   "valid": true
+  },
+  {
+   "question": "What is the average chart number for 11/1965?",
+   "context": "CREATE TABLE table_name_97 (chart_no INTEGER, date VARCHAR)",
+   "answer": "SELECT AVG(chart_no) FROM table_name_97 WHERE date = \"11/1965\"",
+   "pred": "SELECT AVG(chart_no) FROM table_name_97 WHERE date = \"11/1965\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "How tall is the Anqing Bridge which opened prior to 2011?",
+   "context": "CREATE TABLE table_name_8 (height_of_bridge_structure VARCHAR, opened VARCHAR, name VARCHAR)",
+   "answer": "SELECT height_of_bridge_structure FROM table_name_8 WHERE opened < 2011 AND name = \"anqing bridge\"",
+   "pred": "SELECT height_of_bridge_structure FROM table_name_8 WHERE opened < 2011 AND name = \"anqing bridge\"",
+   "exact": true,
+   "exec": true,
+   "valid": true
+  },
+  {
+   "question": "What is the maximum number of stolen ends against for Japan? ",
+   "context": "CREATE TABLE table_16684420_2 (stolen_ends_against INTEGER, country VARCHAR, Japan VARCHAR)",
+   "answer": "SELECT MAX(stolen_ends_against) FROM table_16684420_2 WHERE country = Japan",
+   "pred": "SELECT MAX(stolen_ends_against) FROM table_16684420_2 WHERE country = \"Japan\"",
+   "exact": false,
+   "exec": true,
+   "valid": true
+  }
+ ]
+}

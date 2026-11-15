@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+data/
+adapters/*.safetensors
+!adapters/adapters.safetensors
+fused/
+results_train_log.txt

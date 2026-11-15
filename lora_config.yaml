@@ -1,0 +1,26 @@
+# LoRA fine-tuning config for mlx-lm (Apple Silicon).   mlx_lm.lora --config lora_config.yaml
+model: "Qwen/Qwen2.5-0.5B-Instruct"
+train: true
+data: "data"                 # train.jsonl / valid.jsonl in chat format
+fine_tune_type: lora
+adapter_path: "adapters"
+
+# Only learn to produce the answer: the loss ignores the system + user tokens.
+mask_prompt: true
+
+num_layers: 16               # adapt the top 16 of 24 transformer blocks
+lora_parameters:
+  rank: 16                   # low-rank dimension r of the update  ΔW = B·A
+  scale: 2.0                 # multiplier on the update (alpha / r)
+  dropout: 0.05
+  keys: ["self_attn.q_proj", "self_attn.k_proj", "self_attn.v_proj", "self_attn.o_proj"]
+
+batch_size: 8
+iters: 800                   # ~1.1 epochs over 6,000 examples
+learning_rate: 1.0e-4
+max_seq_length: 512
+steps_per_report: 25
+steps_per_eval: 100
+val_batches: 25
+save_every: 200
+seed: 42

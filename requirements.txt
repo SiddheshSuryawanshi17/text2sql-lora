@@ -1,0 +1,4 @@
+mlx-lm==0.26.3
+datasets==4.1.0
+sqlglot==27.14.0
+transformers==4.56.2
